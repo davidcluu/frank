@@ -8,6 +8,23 @@ body {
   background-color: #fff;
 }
 
-.navbar {
-    margin-bottom: 0;
+li {
+  text-align: center;
+}
+
+ul {
+padding-left: 2.4%;
+padding-right: 2.4%;
+}
+
+.container .row .col-md-6{
+  padding-bottom: 2%;
+}
+
+.navbar-brand {
+  padding-left: 45%;
+}
+
+.navbar-header {
+  background-color: black;
 }
