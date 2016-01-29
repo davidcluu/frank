@@ -1,5 +1,5 @@
 /**
- * Dependencies
+ * Load dependencies
  */
 var express = require('express');
 var http = require('http');
@@ -7,7 +7,7 @@ var path = require('path');
 var handlebars = require('express3-handlebars');
 
 /**
- * Routes
+ * Load route handler modules
  */
 var index = require('./routes/index');
 
@@ -26,7 +26,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 
 /**
- * Routes
+ * Route handlers
  */
 app.get('/', index.view);
 
