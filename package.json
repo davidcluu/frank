@@ -1,15 +1,29 @@
 {
   "name": "frank",
   "version": "0.0.1",
-  "author": "David Luu",
+  "description": "frank",
+  "employees": [
+    {
+      "name": "Lauren Liu"
+    }, 
+    {
+      "name": "Paris Do"
+    },
+    {
+      "name": "David Luu"
+    }
+  ],
 
   "repository": {
     "type": "git",
-    "url": "https://github.com/davidcluu/frank_nodejs"
+    "url": "git+https://github.com/davidcluu/frank.git"
   },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidcluu/frank/issues"
+  },
+  "homepage": "https://github.com/davidcluu/frank#readme",
 
-  "private": true,
   "scripts": {
     "start": "node index.js"
   },
@@ -19,5 +33,5 @@
   },
   "engines": {
     "node": "0.10.x"
-  }  
+  }
 }
