@@ -10,8 +10,8 @@ var handlebars = require('express3-handlebars');
  * Load route handler modules
  */
 var index = require('./routes/index');
-var category = require('./routes/category');
 var post = require('./routes/post');
+var category = require('./routes/category');
 
 /**
  * App
@@ -31,8 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
  * Route handlers
  */
 app.get('/', index.view);
-app.get('/pages/:category', category.view);
 app.get('/post', post.view);
+app.get('/pages/:category', category.view);
 
 /**
  * Create the server
