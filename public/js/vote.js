@@ -10,18 +10,18 @@ $(function(){
 
 // Upvote
 function doUpvote (e) {
-  doVote($(this), "up", "down");
+  doVote(this, "up", "down");
 }
 
 // Downvote
 function doDownvote (e) {
-  doVote($(this), "down", "up");
+  doVote(this, "down", "up");
 }
 
 // Helper functions for Upvote/Downvote
 function doVote (obj, incOrRev, dec) {
   // Get the parent score object
-  var score = obj.closest(".score");
+  var score = $(obj).closest(".score");
 
   if (score.hasClass("unvoted")) {
     doScoreUpdate(score, incOrRev, 1);

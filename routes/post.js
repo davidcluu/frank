@@ -9,8 +9,8 @@ exports.view = function(req, res) {
 
 // Post to render
 var sample_post = {
-  'title' : 'Sample Title',
-  // Associated picture goes here
+  'title' : 'Sample Pants',
+  'picture-src' : '/images/sample-pants.jpg',
   'upvotes' : 69,
   'downvotes' : 96,
   'comments': [
@@ -20,7 +20,7 @@ var sample_post = {
       'downvotes' : 2
     },
     {
-      'text' : 'What a cute white square!',
+      'text' : 'What a cute pair of pants!',
       'upvotes' : 3,
       'downvotes' : 4
     },

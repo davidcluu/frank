@@ -19,6 +19,8 @@
     
     <!-- Global CSS -->
     <link href="/css/global.css" rel="stylesheet">
+    <!-- Page Specific CSS -->
+    <link href="/css/post.css" rel="stylesheet">
 
     <!-- Global JS -->
     <script src="/js/global.js"></script>
@@ -28,39 +30,41 @@
 
 <body>
 
-  <div>
-    This is a unformatted post screen demonstrating page upvotes/downvotes, comments and comment upvotes/downvotes.
-
-
-    <div class="score unvoted">
-        <div>
-            <span class="arrow up">↑</span>
-            <span class="score upvote">{{upvotes}}</span>
-        </div>
-        <div>
-            <span class="arrow down">↓</span>
-            <span class="score downvote">{{downvotes}}</span>
-        </div>
+    <div class="picture-frame">
+        <img src="{{picture-src}}" class="picture" alt="{{title}}">
     </div>
 
-    <br>
-
-    Comments:
-
-    {{#each comments}}
-    <div>
-        <div>
-            {{text}}
+    <div class="module">
+        <div class="post">
+            <div class="post-text">
+                This is a test pair of pants (thank you Pinterest). Every post should be identical to this one!
+            </div>
+            <div class="score unvoted">
+                <span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
+                <span class="score upvote">{{upvotes}}</span>
+                <span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                <span class="score downvote">{{downvotes}}</span>
+            </div>
         </div>
-        <div class="score unvoted">
-            <span class="arrow up">↑</span>
-            <span class="score upvote">{{upvotes}}</span>
-            <span class="arrow down">↓</span>
-            <span class="score downvote">{{downvotes}}</span>
+
+        <div class="comments-label">
+            Comments:
         </div>
+
+        {{#each comments}}
+        <div class="comment">
+            <div class="comment-text">
+                {{text}}
+            </div>
+            <div class="score unvoted">
+                <span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
+                <span class="score upvote">{{upvotes}}</span>
+                <span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                <span class="score downvote">{{downvotes}}</span>
+            </div>
+        </div>
+        {{/each}}
     </div>
-    {{/each}}
-  </div>
 
 </body>
 

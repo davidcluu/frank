@@ -35,15 +35,12 @@ padding-right: 2.4%;
 .arrow {
   cursor: pointer;
   cursor: hand;
-
-  /* Temporary formatting to make arrows more clickable */
-  font-size: 1.5em;
 }
 
-.upvoted .arrow.up {
+.upvoted .arrow.up, .upvoted .score.upvote {
   color: #f00;
 }
 
-.downvoted .arrow.down {
+.downvoted .arrow.down, .downvoted .score.downvote {
   color: #00f;
 }
