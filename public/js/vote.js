@@ -8,60 +8,42 @@ $(function(){
 /* Upvote/Downvote things
  */
 
-// Helper functions for Upvote/Downvote
-function doScoreUpdate (parent, which, amt) {
-  var newScore = parseInt(parent.find(".score." + which + "vote").text(), 10) + amt;
-  parent.find(".score." + which + "vote").text(newScore);
-}
-
 // Upvote
 function doUpvote (e) {
-  // Get the parent score object
-  var score = $(this).closest(".score");
-
-  if (score.hasClass("unvoted")) {
-    doScoreUpdate(score, "up", 1);
-
-    score.removeClass("unvoted");
-    score.addClass("upvoted");
-  }
-  else if (score.hasClass("downvoted")) {
-    doScoreUpdate(score, "down", -1);
-    doScoreUpdate(score, "up", 1);
-
-    score.removeClass("downvoted");
-    score.addClass("upvoted");
-  }
-  else {
-    doScoreUpdate(score, "up", -1);
-
-    score.removeClass("upvoted");
-    score.addClass("unvoted");
-  }
+  doVote($(this), "up", "down");
 }
 
 // Downvote
 function doDownvote (e) {
+  doVote($(this), "down", "up");
+}
+
+// Helper functions for Upvote/Downvote
+function doVote (obj, incOrRev, dec) {
   // Get the parent score object
-  var score = $(this).closest(".score");
+  var score = obj.closest(".score");
 
   if (score.hasClass("unvoted")) {
-    doScoreUpdate(score, "down", 1);
+    doScoreUpdate(score, incOrRev, 1);
 
     score.removeClass("unvoted");
-    score.addClass("downvoted");
   }
-  else if (score.hasClass("upvoted")) {
-    doScoreUpdate(score, "up", -1);
-    doScoreUpdate(score, "down", 1);
+  else if (score.hasClass(dec + "voted")) {
+    doScoreUpdate(score, dec, -1);
+    doScoreUpdate(score, incOrRev, 1);
 
-    score.removeClass("upvoted");
-    score.addClass("downvoted");
+    score.removeClass(dec + "voted");
   }
   else {
-    doScoreUpdate(score, "down", -1);
+    doScoreUpdate(score, incOrRev, -1);
 
-    score.removeClass("downvoted");
     score.addClass("unvoted");
   }
+
+  score.toggleClass(incOrRev + "voted");
+}
+
+function doScoreUpdate (parent, which, amt) {
+  var newScore = parseInt(parent.find(".score." + which + "vote").text(), 10) + amt;
+  parent.find(".score." + which + "vote").text(newScore);
 }
