@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>frank.post</title>
+    <title>{{title}}</title>
 
     <!-- Boostrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,25 @@
 <body>
 
   <div>
-    This is the post screen.
+    This is a unformatted post screen demonstrating page upvotes/downvotes, comments and comment upvotes/downvotes.
+
+    <br>
+
+    ↑ {{upvotes}}
+
+    <br>
+
+    ↓ {{downvotes}}
+
+    <br>
+
+    Comments:
+
+    {{#each comments}}
+    <div>
+        {{text}} | ↑ {{upvotes}} | ↓ {{downvotes}}
+    </div>
+    {{/each}}
   </div>
 
 </body>

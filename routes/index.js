@@ -28,6 +28,6 @@ var categories = {
     },
     {
       'category' : 'facialhair'
-    },
+    }
   ]
 }
