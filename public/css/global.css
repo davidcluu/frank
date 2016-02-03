@@ -28,3 +28,22 @@ padding-right: 2.4%;
 .navbar-header {
   background-color: black;
 }
+
+/* Upvote/Downvote interaction
+ */
+
+.arrow {
+  cursor: pointer;
+  cursor: hand;
+
+  /* Temporary formatting to make arrows more clickable */
+  font-size: 1.5em;
+}
+
+.upvoted .arrow.up {
+  color: #f00;
+}
+
+.downvoted .arrow.down {
+  color: #00f;
+}
