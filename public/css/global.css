@@ -21,6 +21,9 @@ padding-right: 2.4%;
   padding-bottom: 2%;
 }
 
+/* Navbar
+ */
+
 .navbar {
   background-color: black !important; 
   border: 0 !important;
@@ -33,9 +36,6 @@ padding-right: 2.4%;
 .navbar-header {
   background-color: black;
 }
-
-/* Navbar
- */
 
 .btn {
   border:0px solid transparent;
