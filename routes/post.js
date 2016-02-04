@@ -10,7 +10,7 @@ exports.view = function(req, res) {
 // Post to render
 var sample_post = {
   'title' : 'Sample Pants',
-  'picture-src' : '/images/sample-pants.jpg',
+  'img-src' : '/images/sample-pants.jpg',
   'upvotes' : 69,
   'downvotes' : 96,
   'comments': [

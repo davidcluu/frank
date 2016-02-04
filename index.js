@@ -19,12 +19,23 @@ var post = require('./routes/post');
  */
 var app = express();
 
+/*
+ * Handlebars instance
+ */
+var hbs = handlebars.create ({
+  // Instance level helpers
+  helpers: {
+      foo: function () { return 'FOO!'; }
+  }
+});
+
+
 /**
  * Environments
  */
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', handlebars());
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 
