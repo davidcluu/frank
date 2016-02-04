@@ -1,5 +1,5 @@
 body {
-  padding-top: 70px;
+  margin: 70px 0;
 }
 
 .nav-image {
@@ -17,8 +17,13 @@ padding-left: 2.4%;
 padding-right: 2.4%;
 }
 
-.container .row .col-md-6{
+.container .row .col-md-6 {
   padding-bottom: 2%;
+}
+
+.navbar {
+  background-color: black !important; 
+  border: 0 !important;
 }
 
 .navbar-brand {
@@ -27,6 +32,34 @@ padding-right: 2.4%;
 
 .navbar-header {
   background-color: black;
+}
+
+/* Navbar
+ */
+
+.btn {
+  border:0px solid transparent;
+  background-color: black;
+  border-radius: 0;
+}
+
+.btn a:active, a:focus, a:hover {
+  background-color: black;
+  box-shadow: none;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+  box-shadow: none;
+  background-color: black;
+}
+
+.btn-group:hover, .btn-group:focus, .btn-group:active {
+  box-shadow: none;
+  background-color:black;
+}
+
+.btn .glyphicon {
+  color: white;
 }
 
 /* Upvote/Downvote interaction
