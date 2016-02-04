@@ -14,21 +14,76 @@
     <script src="/js/jquery.js"></script>
 
     <!-- Boostrap -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/submit.css" rel="stylesheet">
     <script src="/js/bootstrap.min.js"></script>
-    
+
     <!-- Global CSS -->
     <link href="/css/global.css" rel="stylesheet">
 
     <!-- Global JS -->
     <script src="/js/global.js"></script>
+
+    <title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
 
-  <div>
-    This will eventually be the submit a post form.
+<body>
+<!-- UPLOAD PHOTO -->
+
+  <div class="fileupload fileupload-new" data-provides="fileupload">
+    <span class="btn btn-primary btn-file"><span class="fileupload-new">Upload Photo</span>
+    <span class="fileupload-exists">Change</span>         <input type="file" /></span>
+    <span class="fileupload-preview"></span>
+    <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
   </div>
+
+<!-- ADD COMMENT -->
+
+<div class="container">
+  <form role="form">
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+  </form>
+</div>
+<!-- DROP DOWN MENU FOR CATEGORIES -->
+  <div class="container">
+    <div id="category">
+    <label for="comment">Choose category:</label>
+  </div>
+  </div>
+
+<div class="container">
+  <div>
+<select>
+  <option>Clothing</option>
+  <option>Shoes</option>
+  <option>Accesories</option>
+  <option>Makeup</option>
+  <option>Hairstyles</option>
+  <option>Facial Hair</option>
+</select>
+</div>
+</div>
+
+<!-- ADD TAGS -->
+<div class="container">
+  <form role="form">
+    <div class="form-group">
+      <label for="comment">Add Tags:</label>
+      <textarea class="form-control" rows="1" id="comment"></textarea>
+    </div>
+  </form>
+</div>
 
 </body>
 
