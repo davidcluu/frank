@@ -10,7 +10,8 @@ exports.view = function(req, res) {
 // Post to render
 var sample_post = {
   'title' : 'Sample Pants',
-  'img-src' : '/images/sample-pants.jpg',
+  'img-src' : '/images/temp/sample-pants.jpg',
+  'text' : 'This is a test pair of pants (thank you Pinterest). Every post should be identical to this one!',
   'upvotes' : 69,
   'downvotes' : 96,
   'comments': [

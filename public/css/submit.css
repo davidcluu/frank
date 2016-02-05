@@ -23,6 +23,10 @@
 .control-group.success .fileupload .fileupload-preview{color:#468847;}
 .control-group.success .fileupload .thumbnail{border-color:#468847;}
 
+.uploadHolder{
+  text-align: center;
+}
+
 /********* ADD COMMENT http://bootsnipp.com/snippets/oVREB ***********/
 
 label {
@@ -41,5 +45,8 @@ select {
 
 .container #category{
   padding-top: 0px;
+}
 
+.buttonHolder {
+  text-align: center;
 }

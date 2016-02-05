@@ -26,7 +26,27 @@ var app = express();
 var hbs = handlebars.create ({
   // Instance level helpers
   helpers: {
-      foo: function () { return 'FOO!'; }
+    // Capitalizes the first letter of every space-delimited word
+    // ex. "hello world" -> "Hello World"
+    capitalizeAll: function (str) {
+      var pieces = str.split(" ");
+      for (var i = 0; i < pieces.length; i++) {
+        pieces[i] = pieces[i].charAt(0).toUpperCase() + pieces[i].slice(1);
+      }
+      return pieces.join(" ");
+    },
+    // Truncates the last full word that fits within len characters, appends ellipsis to the end
+    truncate: function (str, len) {
+      if (str.length > len && str.length > 0) {
+        var new_str = str + " ";
+        new_str = str.substr (0, len);
+        new_str = str.substr (0, new_str.lastIndexOf(" "));
+        new_str = (new_str.length > 0) ? new_str : str.substr (0, len);
+
+        return (new_str + " ..."); 
+      }
+      return str;
+    }
   }
 });
 
