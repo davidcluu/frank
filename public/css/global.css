@@ -1,5 +1,5 @@
 body {
-  margin: 70px 0;
+  padding: 70px 0;
 }
 
 .nav-image {
@@ -19,6 +19,14 @@ padding-right: 2.4%;
 
 .container .row .col-md-6 {
   padding-bottom: 2%;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
 }
 
 /* Navbar

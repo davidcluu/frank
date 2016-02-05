@@ -35,13 +35,23 @@
     <div class="module">
         <div class="row">
             {{#each posts}}
-                <div class="col-xs-6 col-min-padding">
+                <div class="col-xs-12 col-min-padding">
                     <div class="post-frame">
                         <a href="/pages/{{../category}}/hash/{{title}}">
                             <img src="{{img-src}}" class="post-picture" alt="{{title}}">
                         </a>
-                        <div class="title-description">{{title}} {{upvotes}} {{downvotes}}</div>
-                        <div class="category">{{../category}}</div>
+                        <div class="title-description">
+                            <div>{{truncate title 140}}</div>
+                            <div class="score unvoted align-right">
+                                <span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
+                                <span class="score upvote">{{upvotes}}</span>
+                                <span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                                <span class="score downvote">{{downvotes}}</span>
+                            </div>
+                        </div>
+                        <div class="category">
+                            {{capitalizeAll ../category}}
+                        </div>
                     </div>
                 </div>
             {{/each}}
