@@ -33,12 +33,14 @@
     {{> nav}}
 
     <!-- UPLOAD PHOTO -->
+    <div class="uploadHolder">
     <div class="fileupload fileupload-new" data-provides="fileupload">
         <span class="btn btn-primary btn-file"><span class="fileupload-new">Upload Photo</span>
         <span class="fileupload-exists">Change</span><input type="file" /></span>
         <span class="fileupload-preview"></span>
         <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
     </div>
+  </div>
 
     <!-- ADD COMMENT -->
     <div class="container">
@@ -78,6 +80,10 @@
                 <textarea class="form-control" rows="1" id="comment"></textarea>
             </div>
         </form>
+    </div>
+      <!-- SUBMIT BUTTON-->
+    <div class="buttonHolder">
+      <input type="submit" value="Submit">
     </div>
 
 </body>
