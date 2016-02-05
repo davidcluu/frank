@@ -26,6 +26,8 @@ var app = express();
 var hbs = handlebars.create ({
   // Instance level helpers
   helpers: {
+    // Capitalizes the first letter of every space-delimited word
+    // ex. "hello world" -> "Hello World"
     capitalizeAll: function (str) {
       var pieces = str.split(" ");
       for (var i = 0; i < pieces.length; i++) {
@@ -33,6 +35,7 @@ var hbs = handlebars.create ({
       }
       return pieces.join(" ");
     },
+    // Truncates the last full word that fits within len characters, appends ellipsis to the end
     truncate: function (str, len) {
       if (str.length > len && str.length > 0) {
         var new_str = str + " ";
