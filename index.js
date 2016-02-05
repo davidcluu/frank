@@ -13,6 +13,7 @@ var index = require('./routes/index');
 var submit = require('./routes/submit');
 var category = require('./routes/category');
 var post = require('./routes/post');
+var popular = require('./routes/popular');
 
 /**
  * App
@@ -46,6 +47,7 @@ app.get('/', index.view);
 app.get('/submit', submit.view);
 app.get('/pages/:category', category.view);
 app.get('/pages/:category/:hash/:title_cut', post.view);
+app.get('/popular', popular.view);
 
 /**
  * Create the server
