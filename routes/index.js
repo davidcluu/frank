@@ -4,29 +4,12 @@
 
 // Render the page
 exports.view = function(req, res) {
-  res.render('index', categories);
+  res.render('index', info);
 };
 
 // Categories to render
-var categories = {
-  'categories': [
-    {
-      'category' : 'clothing'
-    },
-    {
-      'category' : 'shoes'
-    },
-    {
-      'category' : 'accessories'
-    },
-    {
-      'category' : 'makeup'
-    },
-    {
-      'category' : 'hairstyles'
-    },
-    {
-      'category' : 'facialhair'
-    }
-  ]
+var categories = require('./placeholders/categories.json');
+
+var info = {
+  'categories' : categories
 }

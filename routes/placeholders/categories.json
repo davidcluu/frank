@@ -1,0 +1,26 @@
+[
+  {
+    "category" : "Clothing",
+    "short" : "clothing"
+  },
+  {
+    "category" : "Shoes",
+    "short" : "shoes"
+  },
+  {
+    "category" : "Accessories",
+    "short" : "accessories"
+  },
+  {
+    "category" : "Makeup",
+    "short" : "makeup"
+  },
+  {
+    "category" : "Hairstyles",
+    "short" : "hairstyles"
+  },
+  {
+    "category" : "Facial Hair",
+    "short" : "facialhair"
+  }
+]

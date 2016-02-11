@@ -32,59 +32,26 @@
 
     {{> nav}}
 
-    <!-- UPLOAD PHOTO -->
-    <div class="uploadHolder">
-    <div class="fileupload fileupload-new" data-provides="fileupload">
-        <span class="btn btn-primary btn-file"><span class="fileupload-new">Upload Photo</span>
-        <span class="fileupload-exists">Change</span><input type="file" /></span>
-        <span class="fileupload-preview"></span>
-        <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
-    </div>
-  </div>
-
-    <!-- ADD COMMENT -->
-    <div class="container">
-        <form role="form">
-            <div class="form-group">
-                <label for="comment">Comment:</label>
-                <textarea class="form-control" rows="5" id="comment"></textarea>
-            </div>
-        </form>
-    </div>
-
-    <!-- DROP DOWN MENU FOR CATEGORIES -->
-    <div class="container">
-        <div id="category">
-            <label for="comment">Choose category:</label>
-        </div>
-    </div>
-
-    <div class="container">
-        <div>
-            <select>
-                <option>Clothing</option>
-                <option>Shoes</option>
-                <option>Accesories</option>
-                <option>Makeup</option>
-                <option>Hairstyles</option>
-                <option>Facial Hair</option>
+    <form id="submit-form">
+        <fieldset class="form-group">
+            <label for="exampleTextarea">Comment:</label>
+            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="exampleSelect1">Choose Category:</label>
+            <select class="form-control" id="exampleSelect1">
+                {{#each categories}}
+                    {{category}}
+                    <option>{{category}}</option>
+                {{/each}}
             </select>
-        </div>
-    </div>
-
-    <!-- ADD TAGS -->
-    <div class="container">
-        <form role="form">
-            <div class="form-group">
-                <label for="comment">Add Tags:</label>
-                <textarea class="form-control" rows="1" id="comment"></textarea>
-            </div>
-        </form>
-    </div>
-      <!-- SUBMIT BUTTON-->
-    <div class="buttonHolder">
-      <input type="submit" value="Submit">
-    </div>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" class="form-control-file" id="exampleInputFile">
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 
 </body>
 
