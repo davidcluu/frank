@@ -49,11 +49,9 @@ var hbs = handlebars.create ({
     },
     truncateURL: function (str, len) {
       if (str.length > len && str.length > 0) {
-        var new_str = str.substr(0, len).toLowerCase().replace(/ /g, "_");
-
-        return new_str;
+        return str.substr(0, len).toLowerCase().replace(/ /g, "_");
       }
-      return str;
+      return str.toLowerCase().replace(/ /g, "_");
     }
   }
 });

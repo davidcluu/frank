@@ -1,6 +1,8 @@
 {
   "title" : "Sample T-Shirt",
   "img-src" : "/images/temp/sample-shirt.jpg",
+  "category" : "Clothing",
+  "category-short" : "clothing",
   "upvotes" : 99,
   "downvotes" : 30,
   "comments": [

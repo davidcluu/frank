@@ -1,6 +1,8 @@
 {
   "title" : "Sample Outfit",
   "img-src" : "/images/temp/sample-outfit.jpg",
+  "category" : "Clothing",
+  "category-short" : "clothing",
   "upvotes" : 98,
   "downvotes" : 40,
   "comments": [

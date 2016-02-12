@@ -1,6 +1,8 @@
 {
   "title" : "Sample Shoes",
   "img-src" : "/images/temp/sample-shoes.jpg",
+  "category" : "Shoes",
+  "category-short" : "shoes",
   "upvotes" : 97,
   "downvotes" : 50,
   "comments": [
