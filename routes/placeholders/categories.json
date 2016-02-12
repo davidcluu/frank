@@ -1,26 +1,51 @@
 [
   {
     "category" : "Clothing",
-    "short" : "clothing"
+    "short" : "clothing",
+    "subcategories" : [
+      "Shirts",
+      "Pants"
+    ]
   },
   {
     "category" : "Shoes",
-    "short" : "shoes"
+    "short" : "shoes",
+    "subcategories" : [
+      "Sneakers",
+      "Flats"
+    ]
   },
   {
     "category" : "Accessories",
-    "short" : "accessories"
+    "short" : "accessories",
+    "subcategories" : [
+      "Earrings",
+      "Necklaces"
+    ]
   },
   {
     "category" : "Makeup",
-    "short" : "makeup"
+    "short" : "makeup",
+    "subcategories" : [
+      "Eye",
+      "Cheek"
+    ]
   },
   {
     "category" : "Hairstyles",
-    "short" : "hairstyles"
+    "short" : "hairstyles",
+    "subcategories" : [
+      "Long",
+      "Medium",
+      "Short"
+    ]
   },
   {
     "category" : "Facial Hair",
-    "short" : "facialhair"
+    "short" : "facialhair",
+    "subcategories" : [
+      "Peach Fuzz",
+      "Lumberjack"
+    ]
   }
 ]

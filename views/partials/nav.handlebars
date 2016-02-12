@@ -11,7 +11,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-header">
-            <div class="btn-group btn-group-justified" role="group" aria-label="navbar button">
+            <div class="btn-group btn-group-justified" role="group" aria-label="navbar button" style="border-radius: 0 !important;">
                 <!--HOME button-->
                 <div class="btn-group" role="group">
                     <a href="/" class="btn btn-default btn-lg" aria-label="Home">
@@ -30,19 +30,40 @@
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                     </a>
                 </div>
-                <!--POPULAR button-->
+                <!--USER button-->
                 <div class="btn-group" role="group">
                     <a href="/popular" class="btn btn-default btn-lg" aria-label="Popular">
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                     </a>
                 </div>
                 <!--MENU button-->
                 <div class="btn-group" role="group">
-                    <a class="btn btn-default btn-lg" aria-label="Menu">
-                        <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                    <a class="btn btn-default btn-lg" aria-label="Menu" id="category-nav-toggle">
+                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                     </a>
                 </div>
             </div>
         </div>
     </div>
 </nav>
+
+<!-- Navbar Bottom -->
+<div id="category-nav-outer">
+    <div id="category-nav-inner">
+        <div class="container">
+            <div class="row">
+                <ul style="list-style: none; margin: 0; padding: 0;">
+                    {{#each categories}}
+                        <li style="text-align: left; border-bottom: 1px solid #222; padding: 20px 10px 20px 30px">
+                            <a href="/pages/{{short}}" class="category-nav-category" id="category-nav-{{category}}">
+                                {{category}}
+                            </a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </div>
+</div>

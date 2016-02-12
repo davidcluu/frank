@@ -62,6 +62,32 @@ padding-right: 2.4%;
   color: white;
 }
 
+#category-nav-outer {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 50px;
+  z-index: 1030;
+  background-color: #000;
+  border-bottom: 1px solid white;
+
+  height: 0;
+  overflow: hidden;
+}
+
+#category-nav-inner {
+}
+
+.category-nav-category {
+  font-size: 20px;
+  color: #fff;
+}
+
+.category-nav-category:hover, .category-nav-category:active {
+  color: #fff;
+  text-decoration: none;
+}
+
 /* Upvote/Downvote interaction
  */
 
