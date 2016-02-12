@@ -45,7 +45,7 @@
             {{#each posts}}
                 <div class="col-xs-12 col-min-padding">
                     <div class="post-frame">
-                        <a href="/pages/{{../category/short}}/hash/{{title}}">
+                        <a href="/pages/{{../category/short}}/hash/{{truncateURL title 20}}">
                             <img src="{{img-src}}" class="post-picture" alt="{{title}}">
                         </a>
                         <div class="title-description">
@@ -57,7 +57,7 @@
                                 <span class="score downvote">{{downvotes}}</span>
                             </div>
                         </div>
-                        <div class="category/short">
+                        <div class="category">
                             {{capitalizeAll ../category/short}}
                         </div>
                     </div>
