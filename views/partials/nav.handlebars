@@ -51,18 +51,15 @@
 <div id="category-nav-outer">
     <div id="category-nav-inner">
         <div class="container">
-            <div class="row">
-                <ul style="list-style: none; margin: 0; padding: 0;">
-                    {{#each categories}}
+            <ul style="list-style: none; margin: 0; padding: 0;">
+                {{#each categories}}
+                    <a href="/pages/{{short}}" class="category-nav-category" id="category-nav-{{category}}">
                         <li style="text-align: left; border-bottom: 1px solid #222; padding: 20px 10px 20px 30px">
-                            <a href="/pages/{{short}}" class="category-nav-category" id="category-nav-{{category}}">
-                                {{category}}
-                            </a>
+                            {{category}}
                         </li>
-                    {{/each}}
-                </ul>
-            </div>
-            <!-- /.row -->
+                    </a>
+                {{/each}}
+            </ul>
         </div>
         <!-- /.container -->
     </div>

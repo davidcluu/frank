@@ -10,6 +10,19 @@
   padding: 3px;
 }
 
+.subcategory-module {
+  padding: 10px 10px 20px 10px;
+}
+
+.subcategory-frame {
+  display: inline-block;
+  margin: 0 3px 5px 3px;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #000;
+  color: #fff;
+}
+
 .post-frame {
   padding-bottom: 6px;
 }

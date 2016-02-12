@@ -3,49 +3,93 @@
     "category" : "Clothing",
     "short" : "clothing",
     "subcategories" : [
-      "Shirts",
-      "Pants"
+      {
+        "name" : "Shirts"
+      },
+      {
+        "name" : "Dress Shirts"
+      },
+      {
+        "name" : "Tops"
+      },
+      {
+        "name" : "Pants"
+      },
+      {
+        "name" : "Skirts"
+      },
+      {
+        "name" : "Dresses"
+      },
+      {
+        "name" : "Tights"
+      },
+      {
+        "name" : "Sweaters"
+      }
     ]
   },
   {
     "category" : "Shoes",
     "short" : "shoes",
     "subcategories" : [
-      "Sneakers",
-      "Flats"
+      {
+        "name" : "Sneakers"
+      },
+      {
+        "name" : "Flats"
+      }
     ]
   },
   {
     "category" : "Accessories",
     "short" : "accessories",
     "subcategories" : [
-      "Earrings",
-      "Necklaces"
+      {
+        "name" : "Necklaces"
+      },
+      {
+        "name" : "Earrings"
+      }
     ]
   },
   {
     "category" : "Makeup",
     "short" : "makeup",
     "subcategories" : [
-      "Eye",
-      "Cheek"
+      {
+        "name" : "Eye"
+      },
+      {
+        "name" : "Cheek"
+      }
     ]
   },
   {
     "category" : "Hairstyles",
     "short" : "hairstyles",
     "subcategories" : [
-      "Long",
-      "Medium",
-      "Short"
+      {
+        "name" : "Long"
+      },
+      {
+        "name" : "Medium"
+      },
+      {
+        "name" : "Short"
+      }
     ]
   },
   {
     "category" : "Facial Hair",
     "short" : "facialhair",
     "subcategories" : [
-      "Peach Fuzz",
-      "Lumberjack"
+      {
+        "name" : "Soul Patch"
+      },
+      {
+        "name" : "Goatee"
+      }
     ]
   }
 ]

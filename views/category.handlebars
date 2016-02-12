@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>frank.{{category}}</title>
+    <title>frank.{{category/short}}</title>
 
     <!-- jQuery -->
     <script src="/js/jquery.js"></script>
@@ -32,12 +32,20 @@
 
     {{> nav}}
 
+    <div class="subcategory-module">
+        {{#each category/subcategories}}
+            <span class="subcategory-frame">
+                {{name}}
+            </span>
+        {{/each}}
+    </div>
+
     <div class="module">
         <div class="row">
             {{#each posts}}
                 <div class="col-xs-12 col-min-padding">
                     <div class="post-frame">
-                        <a href="/pages/{{../category}}/hash/{{title}}">
+                        <a href="/pages/{{../category/short}}/hash/{{title}}">
                             <img src="{{img-src}}" class="post-picture" alt="{{title}}">
                         </a>
                         <div class="title-description">
@@ -49,8 +57,8 @@
                                 <span class="score downvote">{{downvotes}}</span>
                             </div>
                         </div>
-                        <div class="category">
-                            {{capitalizeAll ../category}}
+                        <div class="category/short">
+                            {{capitalizeAll ../category/short}}
                         </div>
                     </div>
                 </div>
