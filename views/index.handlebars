@@ -32,6 +32,23 @@
 
     {{> nav}}
 
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <ul style="list-style: none;">
+                {{#each categories}}
+                    <li>
+                        <a href="/pages/{{short}}">
+                            <img src="/images/rect-{{short}}.png" class="img-thumbnail nav-image" alt="{{short}}">
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
     <div class="module">
         <div class="row">
             {{#each posts}}
