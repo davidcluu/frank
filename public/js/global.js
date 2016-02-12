@@ -1,5 +1,7 @@
-// jQuery ready ()
 $(function(){
+  $(".btn-group").on("swipeleft",function(){
+    alert("You swiped left!");
+  });
 });
 
 (function () {
