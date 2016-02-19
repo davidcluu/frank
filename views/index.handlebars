@@ -21,6 +21,8 @@
     <link href="/css/global.css" rel="stylesheet">
     <!-- Page Specific CSS -->
     <link href="/css/index.css" rel="stylesheet">
+    <!--Category CSS -->
+    <link href="/css/category.css" rel="stylesheet">
 
     <!-- Global JS -->
     <script src="/js/global.js"></script>
@@ -32,33 +34,20 @@
 
     {{> nav}}
 
-    <!-- Page Content -->
-    <div class="container">
-        <div class="row">
-            <ul style="list-style: none;">
-                {{#each categories}}
-                    <li>
-                        <a href="/pages/{{short}}">
-                            <img src="/images/rect-{{short}}.png" class="img-thumbnail nav-image" alt="{{short}}">
-                        </a>
-                    </li>
-                {{/each}}
-            </ul>
-        </div>
-        <!-- /.row -->
-    </div>
+    <h4>What's Trending Now</h4>
     <!-- /.container -->
 
     <div class="module">
         <div class="row">
             {{#each posts}}
                 <div class="col-xs-12 col-min-padding">
-                    <div class="post-frame">
+                    <div class="post-box">
                         <a href="/pages/{{category-short}}/hash/{{truncateURL title 20}}">
                             <img src="{{img-src}}" class="post-picture" alt="{{title}}">
                         </a>
                         <div class="title-description">
-                            <div>{{truncate title 140}}</div>
+                            <h5>{{username}}</h5>
+                            <div><h6>{{truncate title 140}}</h6></div>
                             <div class="score unvoted align-right">
                                 <span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
                                 <span class="score upvote">{{upvotes}}</span>
@@ -70,6 +59,7 @@
                             {{category}}
                         </div>
                     </div>
+                    <div class="padding"></div>
                 </div>
             {{/each}}
         </div>

@@ -23,28 +23,38 @@
   color: #fff;
 }
 
-.post-frame {
-  padding-bottom: 6px;
+.post-box {
+  box-shadow: 2px 2px 5px #888888;
+
 }
 
 .post-picture {
   max-width: 100%;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 0px; 
+  border-top-right-radius: 0px;
 }
 
 .title-description {
-  padding: 3px;
+  padding-left: 3px;
+  background-color: #ffffff;
+}
 
-  background-color: #dddddd;
+.title-description h5 {
+  padding-bottom: 0px;
 }
 
 .category {
   padding: 3px;
 
   border-top: 1px solid #ffffff;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 
-  background-color: #dddddd;
+  background-color: #ffffff;
 }
+
+.padding {
+  padding-bottom:  10px;
+}
+
+

@@ -1,6 +1,7 @@
 {
   "title" : "Sample T-Shirt",
   "img-src" : "/images/temp/sample-shirt.jpg",
+  "username" : "_vargas_",
   "category" : "Clothing",
   "category-short" : "clothing",
   "upvotes" : 99,

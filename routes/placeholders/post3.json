@@ -1,6 +1,7 @@
 {
   "title" : "Sample Outfit",
   "img-src" : "/images/temp/sample-outfit.jpg",
+  "username" : "mike-pants",
   "category" : "Clothing",
   "category-short" : "clothing",
   "upvotes" : 98,

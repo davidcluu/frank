@@ -1,6 +1,7 @@
 {
   "title" : "Sample Shoes",
   "img-src" : "/images/temp/sample-shoes.jpg",
+  "username" : "jstrydor",
   "category" : "Shoes",
   "category-short" : "shoes",
   "upvotes" : 97,
