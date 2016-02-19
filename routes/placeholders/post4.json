@@ -1,0 +1,25 @@
+{
+  "title" : "Sample Shoes",
+  "img-src" : "/images/temp/sample-shoes.jpg",
+  "category" : "Shoes",
+  "category-short" : "shoes",
+  "upvotes" : 97,
+  "downvotes" : 50,
+  "comments": [
+    {
+      "text" : "That\"s so ... 2016",
+      "upvotes" : 1,
+      "downvotes" : 2
+    },
+    {
+      "text" : "What a cute pair of pants!",
+      "upvotes" : 3,
+      "downvotes" : 4
+    },
+    {
+      "text" : "I r8 8/8 m8.",
+      "upvotes" : 5,
+      "downvotes" : 6
+    }
+  ]
+}
