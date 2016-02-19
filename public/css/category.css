@@ -31,7 +31,7 @@
 }
 
 .post-box {
-  box-shadow: 2px 2px 5px #888888;
+  box-shadow: 2px 2px 5px #999999
 
 }
 
@@ -72,11 +72,30 @@
 
 .score {
   color: #b3b3b3;
+  padding-top: 20px;
 }
 
 .caption {
   padding-top: 0px;
   font-size: 12px;
+}
+
+.show-comments {
+  text-transform: uppercase;
+  font-size: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+}
+
+.show-comments a {
+  color: #b3b3b3;
+}
+
+.show-comments a:active {
+  font-weight: bold;
+  background-color: #fff;
+  text-decoration: none;
 }
 
 .category {
@@ -91,6 +110,13 @@
   font-style: italic;
   color: #8cb3d9;
   font-size: 13px;
+  opacity: 0.5;
+}
+
+.category a:active {
+  font-weight: bold;
+  background-color: #fff;
+  text-decoration: none;
 }
 
 .padding {
