@@ -15,6 +15,7 @@ var category = require('./routes/category');
 var post = require('./routes/post');
 var popular = require('./routes/popular');
 var login = require('./routes/login');
+var submit_post = require('./routes/submit-post');
 
 /**
  * App
@@ -72,6 +73,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 app.get('/', index.view);
 app.get('/submit', submit.view);
+app.get('/submit-post', submit_post.post);
 app.get('/pages/:category', category.view);
 app.get('/pages/:category/:hash/:title_cut', post.view);
 app.get('/popular', popular.view);

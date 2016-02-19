@@ -41,25 +41,25 @@
         </div>
     </div>
 
-    <form id="submit-form">
+    <form id="addFriendForm" role="form" method="get" action="/submit-post">
         <fieldset class="form-group">
             <label for="imageInput">Choose photo</label>
-            <input type="file" class="form-control-file" id="imageInput">
+            <input type="file" class="form-control-file" id="imageInput" name="image">
         </fieldset>
         <fieldset class="form-group">
             <label for="commentInput">Comment:</label>
-            <textarea class="form-control" id="commentInput" rows="3"></textarea>
+            <textarea class="form-control" id="commentInput" rows="3" name="comment"></textarea>
         </fieldset>
         <fieldset class="form-group">
             <label for="categorySelect">Choose Category:</label>
-            <select class="form-control" id="categorySelect">
+            <select class="form-control" id="categorySelect" name="category">
                 {{#each categories}}
                     {{category}}
                     <option>{{category}}</option>
                 {{/each}}
             </select>
         </fieldset>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" id="submit-post">Submit</button>
     </form>
 
 </body>
