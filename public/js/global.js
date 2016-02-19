@@ -52,7 +52,7 @@ function doExpandSearchContainer () {
 function doSearch (e) {
   e.preventDefault();
 
-  var searchVal = $('#search-field').val();
+  var searchVal = $('#search-field').val().replace(/\s+/g, ' ').toLowerCase();
 
   // Redirect
   $(location).attr('href', '/pages/' + searchVal);
