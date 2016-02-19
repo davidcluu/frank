@@ -2,6 +2,13 @@
   padding: 0 10%;
 }
 
+.page-title h5 {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  color: #bfbfbf;
+}
+
 .row {
   margin: 0;
 }
@@ -34,6 +41,11 @@
   border-top-right-radius: 0px;
 }
 
+.post-text {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .title-description {
   padding-left: 3px;
   background-color: #ffffff;
@@ -41,6 +53,30 @@
 
 .title-description h5 {
   padding-bottom: 0px;
+}
+
+.caption-box {
+    overflow: hidden;
+}
+.right {
+    float: right;
+    width: 50px;
+    min-height: 50px;
+    background: #fff;
+}
+.left {
+    overflow: hidden;
+    min-height: 50px;
+    background: #fff;
+}
+
+.score {
+  color: #b3b3b3;
+}
+
+.caption {
+  padding-top: 0px;
+  font-size: 12px;
 }
 
 .category {
@@ -51,6 +87,10 @@
   border-bottom-right-radius: 0px;
 
   background-color: #ffffff;
+
+  font-style: italic;
+  color: #8cb3d9;
+  font-size: 13px;
 }
 
 .padding {
@@ -61,11 +101,7 @@
   color: #404040;
 }
 
-.page-title h5 {
-  padding-top: 5px;
-  padding-bottom: 20px;
-  text-transform: uppercase;
-}
+
 
 
 

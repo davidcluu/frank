@@ -24,6 +24,31 @@
   font-size: 16px;
 }
 
+.caption-box {
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.right {
+    float: right;
+    width: 50px;
+    min-height: 50px;
+    background: #fff;
+}
+.left {
+    overflow: hidden;
+    min-height: 50px;
+    background: #fff;
+}
+
+.score {
+  color: #b3b3b3;
+  padding: 0px;
+}
+
+.post-username {
+  padding-bottom: 10px;
+}
+
 .post-text {
   font-style: italic;
   font-size: 12px;
@@ -42,6 +67,27 @@
   padding-top: 10px;
   border-bottom: 1px solid #e6e6e6;
   font-size: 12px;
+}
+
+.commentbox {
+  overflow: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.commentbox .left {
+    float: left;
+    overflow: hidden;
+    min-height: 50px;
+    background: #fff;
+    padding-right: 15px;
+}
+
+.commentbox .right {
+    float: none;
+    width: auto;
+    min-height: 50px;
+    background: #fff;
 }
 
 .score .upvote{

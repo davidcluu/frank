@@ -32,24 +32,29 @@
 
     {{> nav}}
 
-    <div class="picture-frame">
-        <img src="{{post/img-src}}" class="picture" alt="{{post/title}}">
-    </div>
 
     <div class="module">
         <div class="post">
             <div class="post-username">
                 {{post/username}}
             </div>
-            <div class="post-text">
-                {{post/title}}
+            <div class="picture-frame">
+                <img src="{{post/img-src}}" class="picture" alt="{{post/title}}">
             </div>
-            <div class="score unvoted">
-                <span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
-                <span class="score upvote">{{post/upvotes}}</span>
-                <span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
-                <span class="score downvote">{{post/downvotes}}</span>
-            </div>
+            <div class="caption-box">
+                <div class="right">
+                    <div class="score unvoted">
+                        <span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
+                        <span class="score upvote">{{post/upvotes}}</span>
+                        <span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                        <span class="score downvote">{{post/downvotes}}</span>
+                    </div>
+                </div>
+                <div class="left">
+                    <div class="post-text">
+                        {{post/title}}
+                    </div>
+                </div>
         </div>
 
         <div class="comments-label">
@@ -59,14 +64,21 @@
         {{#each post/comments}}
         <div class="comment">
 
-            <div class="comment-text">
-                {{text}}
-            </div>
-            <div class="score unvoted">
-                <span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
-                <span class="score upvote">{{upvotes}}</span>
-                <span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
-                <span class="score downvote">{{downvotes}}</span>
+            <div class="commentbox">
+                <div class="left">
+                    <div class="score unvoted">
+                        <p><span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
+                        <span class="score upvote">{{upvotes}}</span></p>
+                        <p><span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                        <span class="score downvote">{{downvotes}}</span></p>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="comment-text">
+                        {{text}}
+                    </div>
+                </div>
             </div>
         </div>
         {{/each}}
