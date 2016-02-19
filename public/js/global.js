@@ -2,6 +2,7 @@
 $(function(){
   $("#category-nav-toggle").click( doExpandCategoryContainer );
   $("#search-nav-toggle").click( doExpandSearchContainer );
+  $("#search-button").click( doSearch );
 });
 
 
@@ -45,4 +46,14 @@ function doExpandSearchContainer () {
     outer.animate( {height: inner.innerHeight() + "px"} );
   }
   searchExpanded = !searchExpanded;
+}
+
+
+function doSearch (e) {
+  e.preventDefault();
+
+  var searchVal = $('#search-field').val();
+
+  // Redirect
+  $(location).attr('href', '/pages/' + searchVal);
 }

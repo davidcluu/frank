@@ -5,6 +5,8 @@
 var categories = require('./placeholders/categories.json');
 var posts = require('./placeholders/posts.json');
 
+var user = require('./placeholders/user.json');
+
 var info = {
   'categories' : categories,
   'category' : categories[0],
@@ -13,5 +15,16 @@ var info = {
 
 // Render the page
 exports.view = function(req, res) {
-  res.render('index', info);
+  // Not logged in
+  if ( isEmptyObject(user) ) {
+    res.redirect('/login');
+  }
+  // Logged in
+  else {
+    res.render('index', info);
+  }
 };
+
+function isEmptyObject(obj) {
+  return Object.keys(obj).length == 0;
+}
