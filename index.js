@@ -14,6 +14,7 @@ var submit = require('./routes/submit');
 var category = require('./routes/category');
 var post = require('./routes/post');
 var popular = require('./routes/popular');
+var login = require('./routes/login');
 
 /**
  * App
@@ -43,7 +44,7 @@ var hbs = handlebars.create ({
         new_str = str.substr (0, new_str.lastIndexOf(" "));
         new_str = (new_str.length > 0) ? new_str : str.substr (0, len);
 
-        return (new_str + " ..."); 
+        return (new_str + " ...");
       }
       return str;
     },
@@ -74,6 +75,7 @@ app.get('/submit', submit.view);
 app.get('/pages/:category', category.view);
 app.get('/pages/:category/:hash/:title_cut', post.view);
 app.get('/popular', popular.view);
+app.get('/login', login.view);
 
 /**
  * Create the server
