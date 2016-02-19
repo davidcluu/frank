@@ -34,10 +34,12 @@
 
     {{> nav}}
 
-    <h4>What's Trending Now</h4>
     <!-- /.container -->
 
     <div class="module">
+        <div class="page-title">
+            <h5>TRENDING</h5>
+        </div>
         <div class="row">
             {{#each posts}}
                 <div class="col-xs-12 col-min-padding">
@@ -47,7 +49,7 @@
                         </a>
                         <div class="title-description">
                             <h5>{{username}}</h5>
-                            <div><h6>{{truncate title 140}}</h6></div>
+                            <div class="caption"><h6>{{truncate title 140}}</h6></div>
                             <div class="score unvoted align-right">
                                 <span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
                                 <span class="score upvote">{{upvotes}}</span>

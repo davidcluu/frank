@@ -43,15 +43,19 @@
     -->
 
     <div class="module">
+        <div class="page-title">
+            <h5>{{category/short}}</h5>
+        </div>
         <div class="row">
             {{#each posts}}
                 <div class="col-xs-12 col-min-padding">
-                    <div class="post-frame">
+                    <div class="post-box">
                         <a href="/pages/{{category-short}}/hash/{{truncateURL title 20}}">
                             <img src="{{img-src}}" class="post-picture" alt="{{title}}">
                         </a>
                         <div class="title-description">
-                            <div>{{truncate title 140}}</div>
+                            <h5>{{username}}</h5>
+                            <div class="caption"><h6>{{truncate title 140}}</h6></div>
                             <div class="score unvoted align-right">
                                 <span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
                                 <span class="score upvote">{{upvotes}}</span>
@@ -63,11 +67,11 @@
                             {{category}}
                         </div>
                     </div>
+                    <div class="padding"></div>
                 </div>
             {{/each}}
         </div>
     </div>
-
 </body>
 
 </html>

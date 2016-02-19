@@ -2,6 +2,7 @@
   {
     "title" : "This is a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long description testing truncate.",
     "img-src" : "/images/temp/sample-pants.jpg",
+    "username" : "Unidan",
     "category" : "Clothing",
     "category-short" : "clothing",
     "upvotes" : 100,
@@ -27,6 +28,7 @@
   {
     "title" : "Sample T-Shirt",
     "img-src" : "/images/temp/sample-shirt.jpg",
+    "username" : "_vargas_",
     "category" : "Clothing",
     "category-short" : "clothing",
     "upvotes" : 99,
@@ -52,6 +54,7 @@
   {
     "title" : "Sample Outfit",
     "img-src" : "/images/temp/sample-outfit.jpg",
+    "username" : "mike-pants",
     "category" : "Clothing",
     "category-short" : "clothing",
     "upvotes" : 98,
@@ -77,6 +80,7 @@
   {
     "title" : "Sample Shoes",
     "img-src" : "/images/temp/sample-shoes.jpg",
+    "username" : "jstrydor",
     "category" : "Shoes",
     "category-short" : "shoes",
     "upvotes" : 97,

@@ -26,19 +26,37 @@
 
 .post-text {
   font-style: italic;
+  font-size: 12px;
 }
 
 .comments-label {
+  padding-top: 5px;
   padding-bottom: 5px;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: bold;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .comment {
   padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 12px;
 }
 
-.comment-text {
-
+.score .upvote{
+  font-size: 12px;
 }
 
+.score .downvote {
+  font-size: 12px;
+}
+
+.post-username {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-group .btn {
+  background-color: #cccccc;
+}

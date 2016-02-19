@@ -57,4 +57,15 @@
   padding-bottom:  10px;
 }
 
+.title-description .caption {
+  color: #404040;
+}
+
+.page-title h5 {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+
+
 

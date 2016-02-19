@@ -38,6 +38,9 @@
 
     <div class="module">
         <div class="post">
+            <div class="post-username">
+                {{post/username}}
+            </div>
             <div class="post-text">
                 {{post/title}}
             </div>
@@ -50,11 +53,12 @@
         </div>
 
         <div class="comments-label">
-            Comments:
+            COMMENTS
         </div>
 
         {{#each post/comments}}
         <div class="comment">
+
             <div class="comment-text">
                 {{text}}
             </div>
@@ -67,13 +71,15 @@
         </div>
         {{/each}}
         <!--comment box-->
-        <form class="form-inline" role="form">
+        <form class="form-inline" role="form" method="get" action="/post-comment">
             <div class="form-group">
-                <input class="form-control" type="text" placeholder="Add a comment." />
+                <input class="form-control" type="text" name="comment" placeholder="Comment here..." />
             </div>
             <div class="form-group">
                 <button class="btn btn-default">Add</button>
             </div>
+
+            <input type="hidden" name="url" value="/pages/{{post/category-short}}/hash/{{truncateURL post/title 20}}" />
         </form>
     </div>
 

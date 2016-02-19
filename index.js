@@ -16,6 +16,7 @@ var post = require('./routes/post');
 var popular = require('./routes/popular');
 var login = require('./routes/login');
 var submit_post = require('./routes/submit-post');
+var post_comment = require('./routes/post-comment');
 
 /**
  * App
@@ -78,6 +79,7 @@ app.get('/pages/:category', category.view);
 app.get('/pages/:category/:hash/:title_cut', post.view);
 app.get('/popular', popular.view);
 app.get('/login', login.view);
+app.get('/post-comment', post_comment.post);
 
 /**
  * Create the server

@@ -40,3 +40,10 @@
   border: 0 none;
   box-shadow: none;
 }
+
+.page-title h5 {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+
