@@ -8,7 +8,7 @@
 </nav>
 
 <!-- Navbar Bottom -->
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
+<nav class="navbar navbar-inverse navbar-fixed-bottom" style="border-top: 3px solid #fff !important;">
     <div class="container-fluid">
         <div class="navbar-header">
             <div class="btn-group btn-group-justified" role="group" aria-label="navbar button" style="border-radius: 0 !important;">
@@ -26,7 +26,7 @@
                 </div>
                 <!--SEARCH button-->    
                 <div class="btn-group" role="group">         
-                    <a class="btn btn-default btn-lg" aria-label="Search">
+                    <a class="btn btn-default btn-lg" aria-label="Search" id="search-nav-toggle">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                     </a>
                 </div>
@@ -48,19 +48,36 @@
     </div>
 </nav>
 
-<!-- Navbar Bottom -->
+<!-- Navbar Menu -->
 <div id="category-nav-outer">
     <div id="category-nav-inner">
         <div class="container">
-            <ul style="list-style: none; margin: 0; padding: 0;">
+            <ul class="unstyled-list">
                 {{#each categories}}
                     <a href="/pages/{{short}}" class="category-nav-category" id="category-nav-{{category}}">
-                        <li style="text-align: left; border-bottom: 1px solid #222; padding: 20px 10px 20px 30px">
+                        <li class="navbar-link">
                             {{category}}
                         </li>
                     </a>
                 {{/each}}
             </ul>
+        </div>
+        <!-- /.container -->
+    </div>
+</div>
+
+<!-- Navbar Search -->
+<div id="search-nav-outer">
+    <div id="search-nav-inner">
+        <div class="container">
+            <div class="input-group">
+                <input type="search" class="form-control" placeholder="I'm interested in...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                </span>
+            </div><!-- /input-group -->
         </div>
         <!-- /.container -->
     </div>

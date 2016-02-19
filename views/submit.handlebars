@@ -22,33 +22,37 @@
     <!-- Page Specific CSS -->
     <link href="/css/submit.css" rel="stylesheet">
 
-
-
     <!-- Global JS -->
     <script src="/js/global.js"></script>
+    <!-- Submit JS -->
+    <script src="/js/submit.js"></script>
 </head>
 
 <body>
 
     {{> nav}}
 
+    <div class="preview">
+        <img id="previewImage" src="#" alt="your image" />
+    </div>
+
     <form id="submit-form">
         <fieldset class="form-group">
-            <label for="exampleTextarea">Comment:</label>
-            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            <label for="imageInput">Choose photo</label>
+            <input type="file" class="form-control-file" id="imageInput">
         </fieldset>
         <fieldset class="form-group">
-            <label for="exampleSelect1">Choose Category:</label>
-            <select class="form-control" id="exampleSelect1">
+            <label for="commentInput">Comment:</label>
+            <textarea class="form-control" id="commentInput" rows="3"></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="categorySelect">Choose Category:</label>
+            <select class="form-control" id="categorySelect">
                 {{#each categories}}
                     {{category}}
                     <option>{{category}}</option>
                 {{/each}}
             </select>
-        </fieldset>
-        <fieldset class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" class="form-control-file" id="exampleInputFile">
         </fieldset>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
