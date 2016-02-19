@@ -5,3 +5,29 @@
 .btn span {
   color: #fff;
 }
+
+.previewObj {
+  width: 90%;
+  margin: auto;
+  border: 3px solid #aaa;
+  text-align: center;
+}
+
+#previewPlaceholder {
+  display:table;
+}
+
+#previewPlaceholder span {
+  display:table-cell;
+  vertical-align:middle;
+
+  font-size: 40px;
+}
+
+#previewImage {
+  max-width: 100%;
+}
+
+#submit-form {
+  margin-top: 20px;
+}
