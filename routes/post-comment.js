@@ -14,5 +14,4 @@ exports.post = function(req, res) { 
   data["comments"].push(newPost);
 
   res.redirect(url);
-
  }
