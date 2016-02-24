@@ -16,9 +16,9 @@ exports.view = function(req, res) {
 var data = require("./placeholders/posts.json");
 
 exports.post = function(req, res) { 
-  var image = req.query.image;
-  var comment = req.query.comment;
-  var category = req.query.category;
+  var image = req.body.image;
+  var comment = req.body.comment;
+  var category = req.body.category;
 
   var newPost = {
     "title" : comment,

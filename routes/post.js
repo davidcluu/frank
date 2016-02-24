@@ -17,3 +17,22 @@ var info = {
   'categories' : categories,
   'post' : sample_post
 }
+
+
+var data = require("./placeholders/post1.json");
+
+exports.post = function(req, res) { 
+  var comment = req.body.comment;
+  var url = req.body.url;
+
+  var newPost = {
+    "text" : comment,
+    "upvotes" : 0,
+    "downvotes" : 0
+
+  };
+
+  data["comments"].push(newPost);
+
+  res.redirect(url);
+ }

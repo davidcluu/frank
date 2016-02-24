@@ -15,7 +15,6 @@ var category = require('./routes/category');
 var post = require('./routes/post');
 var popular = require('./routes/popular');
 var login = require('./routes/login');
-var post_comment = require('./routes/post-comment');
 
 /**
  * App
@@ -67,19 +66,22 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded());
+app.use(express.json());
 
 /**
  * Route handlers
  */
 app.get('/', index.view);
 app.get('/submit', submit.view);
-app.get('/submit-post', submit.post);
 app.get('/pages/:category', category.view);
 app.get('/pages/:category/:hash/:title_cut', post.view);
 app.get('/popular', popular.view);
 app.get('/login', login.view);
 app.get('/post-login', login.login);
-app.get('/post-comment', post_comment.post);
+
+app.post('/submit-post', submit.post);
+app.post('/post-comment', post.post);
 
 /**
  * Create the server
