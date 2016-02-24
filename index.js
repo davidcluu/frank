@@ -5,6 +5,8 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars');
+var multer = require('multer');
+
 
 /**
  * Load route handler modules
@@ -16,10 +18,12 @@ var post = require('./routes/post');
 var popular = require('./routes/popular');
 var login = require('./routes/login');
 
+
 /**
  * App
  */
 var app = express();
+
 
 /*
  * Handlebars instance
@@ -59,6 +63,21 @@ var hbs = handlebars.create ({
 
 
 /**
+ * Multer
+ */
+var imgNum = 1;
+var storage = multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, './public/images/upload');
+  },
+  filename: function (req, file, callback) {
+    callback(null, 'file' + imgNum + '.png');
+  }
+});
+var upload = multer({storage : storage}).single('image');
+
+
+/**
  * Environments
  */
 app.set('port', process.env.PORT || 3000);
@@ -68,6 +87,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded());
 app.use(express.json());
+
 
 /**
  * Route handlers
@@ -80,8 +100,48 @@ app.get('/popular', popular.view);
 app.get('/login', login.view);
 app.get('/post-login', login.login);
 
-app.post('/submit-post', submit.post);
+app.post('/submit-post', upload, function(req, res) { 
+  var user = require("./routes/placeholders/user.json");
+  var data = require("./routes/placeholders/posts.json");
+
+  var comment = req.body.comment;
+  var category = req.body.category;
+
+  var newPost = {
+    "title" : comment,
+    "img-src" : "/images/upload/file" + imgNum + ".png",
+    "username" : user.username,
+    "category" : category,
+    "category-short" : shortenCategory(category),
+    "upvotes" : 0,
+    "downvotes" : 0,
+    "comments": []
+  };
+
+  data.push(newPost);
+
+  ++imgNum;
+
+  res.redirect('/');
+ });
 app.post('/post-comment', post.post);
+
+
+/**
+ * Route handler helper functions
+ */
+function shortenCategory (category) {
+  switch (category) {
+    case "Clothing": return "clothing";
+    case "Shoes": return "shoes";
+    case "Accessories": return "accessories";
+    case "Makeup": return "makeup";
+    case "Hairstyles": return "hairstyles";
+    case "Facial Hair": return "facialhair";
+    default: console.log("Error: Incorrect Category");
+  }
+}
+
 
 /**
  * Create the server
