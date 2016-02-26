@@ -15,18 +15,9 @@ var index = require('./routes/index');
 var submit = require('./routes/submit');
 var category = require('./routes/category');
 var post = require('./routes/post');
-var popular = require('./routes/popular');
 var login = require('./routes/login');
-
-/**
-* Load bdesign route handler modules
-*/
 var bdesign = require('./routes/bdesign');
-var submit = require('./routes/submitbdesign');
-var category = require('./routes/categorybdesign');
-var post = require('./routes/postbdesign');
-var popular = require('./routes/popular');
-var login = require('./routes/login');
+
 
 /**
  * App
@@ -90,11 +81,27 @@ app.get('/', index.view);
 app.get('/submit', submit.view);
 app.get('/pages/:category', category.view);
 app.get('/pages/:category/:hash/:title_cut', post.view);
-app.get('/popular', popular.view);
 app.get('/login', login.view);
 app.get('/post-login', login.login);
-app.get('/bdesign', bdesign.view);
 
+/**
+ * B-Design Route handlers
+ */
+ var isB = false;
+app.get('/b', function(req, res) {
+  isB = true;
+  index.viewb(req, res);
+});
+app.get('/bdesign', bdesign.view)
+app.get('/submitb', submit.viewb);
+app.get('/pagesb/:category', category.viewb);
+app.get('/pagesb/:category/:hash/:title_cut', post.viewb);
+app.get('/loginb', login.viewb);
+
+
+/**
+ * POST handlers
+ */
 app.post('/submit-post', multer().any(), function(req, res) { 
   var user = require("./routes/placeholders/user.json");
   var data = require("./routes/placeholders/posts.json");
@@ -115,7 +122,12 @@ app.post('/submit-post', multer().any(), function(req, res) { 
 
   data.push(newPost);
 
-  res.redirect('/');
+  if (isB) {
+    res.redirect('/b');
+  }
+  else {
+    res.redirect('/');
+  }
  });
 app.post('/post-comment', post.post);
 

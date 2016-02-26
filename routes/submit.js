@@ -12,3 +12,7 @@ var info = {
 exports.view = function(req, res) {
   res.render('submit', info);
 };
+
+exports.viewb = function(req, res) {
+  res.render('submitbdesign', info);
+};

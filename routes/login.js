@@ -9,8 +9,15 @@ var info = {
 }
 
 // Render the page
+var isB = false;
+
 exports.view = function(req, res) {
   res.render('login', info);
+};
+
+exports.viewb = function(req, res) {
+  isB = true;
+  res.render('loginbdesign', info);
 };
 
 var user = require('./placeholders/user.json');
@@ -22,5 +29,10 @@ exports.login = function(req, res) {
   user["username"] = username;
   user["password"] = password;
 
-  res.redirect('/');
+  if (isB) {
+    res.redirect('/b');
+  }
+  else {
+    res.redirect('/');
+  }
 }

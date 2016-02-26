@@ -7,6 +7,10 @@ exports.view = function(req, res) {
   res.render('post', info);
 };
 
+exports.viewb = function(req, res) {
+  res.render('postbdesign', info);
+};
+
 var categories = require('./placeholders/categories.json');
 
 // Post to render

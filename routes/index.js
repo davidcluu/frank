@@ -25,6 +25,17 @@ exports.view = function(req, res) {
   }
 };
 
+exports.viewb = function(req, res) {
+  // Not logged in
+  if ( isEmptyObject(user) ) {
+    res.redirect('/loginb');
+  }
+  // Logged in
+  else {
+    res.render('indexbdesign', info);
+  }
+};
+
 function isEmptyObject(obj) {
   return Object.keys(obj).length == 0;
 }

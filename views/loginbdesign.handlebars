@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>frank.{{login/short}}</title>
+
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+
+    <!-- Boostrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Global CSS
+    <link href="/css/global.css" rel="stylesheet"> -->
+    <!-- Page Specific CSS -->
+    <link href="/css/login.css" rel="stylesheet">
+
+    <!-- Global JS -->
+    <script src="/js/global.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+
+    <!-- Login JS -->
+    <script type="text/javascript" src="/routes/login.js"></script>
+
+</head>
+
+<body>
+
+  /* Login Page */
+  <div id="fullscreen_bg" class="fullscreen_bg"/>
+
+  <div class="container">
+
+    <form action="/post-login" class="form-signin">
+      <h1 class="form-signin-heading text-muted">Sign In</h1>
+      <input type="text" class="form-control" placeholder="Email address" required="frank@ucsd.edu" autofocus="" name="username">
+      <input type="password" class="form-control" placeholder="Password" required="frank" name="password">
+      <button class="btn btn-lg btn-primary btn-block" type="submit">
+        Login
+      </button>
+    </form>
+
+  </div>
+</body>
+
+</html>
