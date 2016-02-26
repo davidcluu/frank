@@ -63,21 +63,6 @@ var hbs = handlebars.create ({
 
 
 /**
- * Multer
- */
-var imgNum = 1;
-var storage = multer.diskStorage({
-  destination: function (req, file, callback) {
-    callback(null, './public/images/upload');
-  },
-  filename: function (req, file, callback) {
-    callback(null, 'file' + imgNum + '.png');
-  }
-});
-var upload = multer({storage : storage}).single('image');
-
-
-/**
  * Environments
  */
 app.set('port', process.env.PORT || 3000);
@@ -100,7 +85,7 @@ app.get('/popular', popular.view);
 app.get('/login', login.view);
 app.get('/post-login', login.login);
 
-app.post('/submit-post', upload, function(req, res) { 
+app.post('/submit-post', multer().any(), function(req, res) { 
   var user = require("./routes/placeholders/user.json");
   var data = require("./routes/placeholders/posts.json");
 
@@ -109,7 +94,7 @@ app.post('/submit-post', upload, function(req, res) { 
 
   var newPost = {
     "title" : comment,
-    "img-src" : "/images/upload/file" + imgNum + ".png",
+    "img-src" : "http://lorempixel.com/500/500/people/",
     "username" : user.username,
     "category" : category,
     "category-short" : shortenCategory(category),
@@ -119,8 +104,6 @@ app.post('/submit-post', upload, function(req, res) { 
   };
 
   data.push(newPost);
-
-  ++imgNum;
 
   res.redirect('/');
  });
