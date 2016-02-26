@@ -17,6 +17,7 @@ var category = require('./routes/category');
 var post = require('./routes/post');
 var login = require('./routes/login');
 var bdesign = require('./routes/bdesign');
+var profile = require('./routes/profile');
 
 
 /**
@@ -97,6 +98,7 @@ app.get('/submitb', submit.viewb);
 app.get('/pagesb/:category', category.viewb);
 app.get('/pagesb/:category/:hash/:title_cut', post.viewb);
 app.get('/loginb', login.viewb);
+app.get('/profile', profile.view);
 
 
 /**
