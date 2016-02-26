@@ -1,0 +1,88 @@
+<!-- Navbar Top -->
+<nav class="navbar navbar-inverse navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><img src="/images/logo.svg" /></a>
+        </div>
+    </div><!-- /.container -->
+</nav>
+
+<!-- Navbar Bottom -->
+<nav class="navbar navbar-inverse navbar-fixed-bottom" style="border-top: 3px solid #fff !important;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="btn-group btn-group-justified" role="group" aria-label="navbar button" style="border-radius: 0 !important;">
+                <!--HOME button-->
+                <div class="btn-group" role="group">
+                    <a href="/indexbdesign" class="btn btn-default btn-lg" aria-label="Home">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    </a>
+                </div>
+                <!--SEARCH button-->
+                <div class="btn-group" role="group">
+                  <a href="/bdesign" class="btn btn-default btn-lg" aria-label="Post">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+               </a>
+             </div>
+                <!--       <a class="btn btn-default btn-lg" aria-label="Search" id="search-nav-toggle">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </a>
+                </div> -->
+                <!--POST button-->
+                <div class="btn-group" role="group">
+                    <a href="/submitbdesign" class="btn btn-default btn-lg" aria-label="Post">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </a>
+                </div>
+                <!--USER button
+                <div class="btn-group" role="group">
+                    <a href="/popular" class="btn btn-default btn-lg" aria-label="Popular">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </a>
+                </div>
+                -->
+                <!--MENU button-->
+                <div class="btn-group" role="group">
+                    <a class="btn btn-default btn-lg" aria-label="Menu" id="category-nav-toggle">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Navbar Menu -->
+<div id="category-nav-outer">
+    <div id="category-nav-inner">
+        <div class="container">
+            <ul class="unstyled-list">
+                {{#each categories}}
+                    <a href="/pages/{{short}}" class="category-nav-category" id="category-nav-{{category}}">
+                        <li class="navbar-link">
+                            {{category}}
+                        </li>
+                    </a>
+                {{/each}}
+            </ul>
+        </div>
+        <!-- /.container -->
+    </div>
+</div>
+
+<!-- Navbar Search -->
+<div id="search-nav-outer">
+    <div id="search-nav-inner">
+        <div class="container">
+            <div class="input-group">
+                <input type="search" class="form-control" id="search-field" placeholder="I'm interested in...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="search-button" type="button">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                </span>
+            </div><!-- /input-group -->
+        </div>
+        <!-- /.container -->
+    </div>
+</div>

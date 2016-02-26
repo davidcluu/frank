@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>frank.</title>
+
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+
+    <!-- Boostrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Global CSS -->
+    <link href="/css/global.css" rel="stylesheet">
+    <!-- Page Specific CSS -->
+    <link href="/css/index.css" rel="stylesheet">
+    <!--Category CSS -->
+    <link href="/css/category.css" rel="stylesheet">
+
+    <!-- Global JS -->
+    <script src="/js/global.js"></script>
+    <!-- Vote JS -->
+    <script src="/js/vote.js"></script>
+</head>
+
+<body>
+
+    {{> navbdesign}}
+
+    <!-- /.container -->
+
+    <div class="module">
+        <div class="page-title">
+            <h5>TRENDING</h5>
+        </div>
+        <div class="row">
+            {{#each posts}}
+                <div class="col-xs-12 col-min-padding">
+                    <div class="post-box">
+                        <a href="/pages/{{category-short}}/hash/{{truncateURL title 20}}">
+                            <img src="{{img-src}}" class="post-picture" alt="{{title}}">
+                        </a>
+                        <div class="post-text">
+                            <div class="title-description">
+                                <div class="caption-box">
+                                    <div class="right">
+                                        <div class="score unvoted align-right">
+                                            <p><span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
+                                            <span class="score upvote">{{upvotes}}</span></p>
+                                            <p><span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                                            <span class="score downvote">{{downvotes}}</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="left">
+                                        <h5>{{username}}</h5>
+                                        <div class="caption">{{truncate title 140}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="show-comments">
+                                <a href="/pages/clothing/hash/this_is_a_very_very_">view comments</a>
+                            </div>
+
+                            <div class="category">
+                                <a href="/pages/{{category-short}}">#{{category-short}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padding"></div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+</body>
+
+</html>
