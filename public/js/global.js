@@ -3,6 +3,7 @@ $(function(){
   $("#category-nav-toggle").click( doExpandCategoryContainer );
   $("#search-nav-toggle").click( doExpandSearchContainer );
   $("#search-button").click( doSearch );
+  $("#search-button-b").click( doSearchB );
 });
 
 
@@ -56,4 +57,13 @@ function doSearch (e) {
 
   // Redirect
   $(location).attr('href', '/pages/' + searchVal);
+}
+
+function doSearchB (e) {
+  e.preventDefault();
+
+  var searchVal = $('#search-field').val().replace(/\s+/g, ' ').toLowerCase();
+
+  // Redirect
+  $(location).attr('href', '/pagesb/' + searchVal);
 }
