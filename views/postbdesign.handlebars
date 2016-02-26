@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{post/login}}</title>
+
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+
+    <!-- Boostrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Global CSS -->
+    <link href="/css/global.css" rel="stylesheet">
+    <!-- Page Specific CSS -->
+    <link href="/css/post.css" rel="stylesheet">
+
+    <!-- Global JS -->
+    <script src="/js/global.js"></script>
+    <!-- Vote JS -->
+    <script src="/js/vote.js"></script>
+</head>
+
+<body>
+
+    {{> navbdesign}}
+
+
+    <div class="module">
+        <div class="post">
+            <div class="post-username">
+                {{post/username}}
+            </div>
+            <div class="picture-frame">
+                <img src="{{post/img-src}}" class="picture" alt="{{post/title}}">
+            </div>
+            <div class="caption-box">
+                <div class="right">
+                    <div class="score unvoted">
+                        <span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
+                        <span class="score upvote">{{post/upvotes}}</span>
+                        <span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                        <span class="score downvote">{{post/downvotes}}</span>
+                    </div>
+                </div>
+                <div class="left">
+                    <div class="post-text">
+                        {{post/title}}
+                    </div>
+                </div>
+        </div>
+
+        <div class="comments-label">
+            COMMENTS
+        </div>
+
+        {{#each post/comments}}
+        <div class="comment">
+
+            <div class="commentbox">
+                <div class="left">
+                    <div class="score unvoted">
+                        <p><span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
+                        <span class="score upvote">{{upvotes}}</span></p>
+                        <p><span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                        <span class="score downvote">{{downvotes}}</span></p>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="comment-text">
+                        {{text}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        <!--comment box-->
+        <form class="form-inline" role="form" method="post" action="/post-comment">
+            <div class="form-group">
+                <input class="form-control" type="text" name="comment" placeholder="Comment here..." />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default">Add</button>
+            </div>
+
+            <input type="hidden" name="url" value="/pages/{{post/category-short}}/hash/{{truncateURL post/title 20}}" />
+        </form>
+    </div>
+
+</body>
+
+</html>

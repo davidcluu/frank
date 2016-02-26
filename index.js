@@ -18,6 +18,15 @@ var post = require('./routes/post');
 var popular = require('./routes/popular');
 var login = require('./routes/login');
 
+/**
+* Load bdesign route handler modules
+*/
+var bdesign = require('./routes/bdesign');
+var submit = require('./routes/submitbdesign');
+var category = require('./routes/categorybdesign');
+var post = require('./routes/postbdesign');
+var popular = require('./routes/popular');
+var login = require('./routes/login');
 
 /**
  * App
@@ -84,6 +93,7 @@ app.get('/pages/:category/:hash/:title_cut', post.view);
 app.get('/popular', popular.view);
 app.get('/login', login.view);
 app.get('/post-login', login.login);
+app.get('/bdesign', bdesign.view);
 
 app.post('/submit-post', multer().any(), function(req, res) { 
   var user = require("./routes/placeholders/user.json");
