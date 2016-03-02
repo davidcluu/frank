@@ -14,42 +14,43 @@ exports.view = function(req, res) {
 
 exports.viewb = function(req, res) {
   renderPage(req, res, 'categorybdesign');
-
 };
 
 function renderPage(req, res, pageToRender) {
   var categoryName = req.params.category;
 
-  models.Category
+  models.Post
     .find()
-    .sort('_id')
-    .exec(afterQuery);
+    .populate('category')
+    .find({'category': categoryToID(categoryName)})
+    .exec(function(err, post) {
+      models.Category
+        .find()
+        .sort('_id')
+        .exec(afterQuery);
 
-  function afterQuery(err, categories) {
-    if(err) console.log(err);
+      function afterQuery(err, categories) {
+        if(err) console.log(err);
 
-    var category = {}
-    for (var i = 0; i < categories.length; i++) {
-      var cat = categories[i];
-      if (cat.short && (cat.short == categoryName)) {
-        category = cat;
+        var info = {
+          'categories' : categories,
+          'category' : categoryName,
+          'posts' : post
+        }
+
+        res.render(pageToRender, info);
       }
-    }
+    });
+}
 
-    var renderPosts = [];
-    for (var i = 0; i < posts.length; i++) {
-      var post = posts[i];
-      if (post['category-short'] == categoryName) {
-        renderPosts.push(post);
-      }
-    }
-
-    var info = {
-      'categories' : categories,
-      'category' : category,
-      'posts' : renderPosts
-    }
-
-    res.render(pageToRender, info);
+function categoryToID(category) {
+  switch (category) {
+    case 'clothing': return 1;
+    case 'shoes': return 2;
+    case 'accessories': return 3;
+    case 'makeup': return 4;
+    case 'hairstyles': return 5;
+    case 'facialhair': return 6;
+    default: console.log("error!");
   }
 }

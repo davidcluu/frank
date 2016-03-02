@@ -39,7 +39,7 @@
                 {{post/username}}
             </div>
             <div class="picture-frame">
-                <img src="{{post/img-src}}" class="picture" alt="{{post/title}}">
+                <img src="{{post/img_src}}" class="picture" alt="{{post/title}}">
             </div>
             <div class="caption-box">
                 <div class="right">
@@ -91,7 +91,7 @@
                 <button class="btn btn-default">Add</button>
             </div>
 
-            <input type="hidden" name="url" value="/pages/{{post/category-short}}/hash/{{truncateURL post/title 20}}" />
+            <input type="hidden" name="url" value="/pagesb/{{post/category-short}}/hash/{{truncateURL post/title 20}}" />
         </form>
     </div>
 

@@ -50,8 +50,8 @@
             {{#each posts}}
                 <div class="col-xs-12 col-min-padding">
                     <div class="post-box">
-                        <a href="/pages/{{category-short}}/hash/{{truncateURL title 20}}">
-                            <img src="{{img-src}}" class="post-picture" alt="{{title}}">
+                        <a href="/pages/{{category/short}}/{{_id}}/{{truncateURL title 20}}">
+                            <img src="{{img_src}}" class="post-picture" alt="{{title}}">
                         </a>
                         <div class="post-text">
                             <div class="title-description">
@@ -72,7 +72,7 @@
                             </div>
 
                             <div class="show-comments"> 
-                                <a href="/pages/clothing/hash/this_is_a_very_very_">view comments</a>
+                                <a href="/pages/{{category/short}}/{{_id}}/{{truncateURL title 20}}">view comments</a>
                             </div>
 
                             <div class="category">
