@@ -8,29 +8,44 @@ var sample_post = require('./placeholders/post1.json');
 
 // Render the page
 exports.view = function(req, res) {
-  renderPage(res, 'post');
+  renderPage(req, res, 'post');
 };
 
 exports.viewb = function(req, res) {
-  renderPage(res, 'postbdesign');
+  renderPage(req, res, 'postbdesign');
 };
 
-function renderPage(res, pageToRender) {
-  models.Category
-    .find()
-    .sort('_id')
-    .exec(afterQuery);
+function renderPage(req, res, pageToRender) {
+  var category = req.params.category;
+  var id = req.params.id;
+  var title_cut = req.params.title_cut;
 
-  function afterQuery(err, categories) {
-    if(err) console.log(err);
+  models.Post
+    .find({
+      '_id': id
+    })
+    .populate('user')
+    .populate('category')
+    .populate('comments')
+    .exec(function(err, post) {
+      models.Category
+        .find()
+        .sort('_id')
+        .exec(afterQuery);
 
-    var info = {
-      'categories' : categories,
-      'post' : sample_post
-    }
+      function afterQuery(err, categories) {
+        if(err) console.log(err);
 
-    res.render(pageToRender, info);
-  }
+        var info = {
+          'categories' : categories,
+          'post' : post[0]
+        }
+
+        console.log(post);
+
+        res.render(pageToRender, info);
+      }
+    });
 }
 
 

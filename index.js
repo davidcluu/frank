@@ -92,7 +92,7 @@ app.use(express.json());
 app.get('/', index.view);
 app.get('/submit', submit.view);
 app.get('/pages/:category', category.view);
-app.get('/pages/:category/:hash/:title_cut', post.view);
+app.get('/pages/:category/:id/:title_cut', post.view);
 app.get('/login', login.view);
 app.get('/profile', profile.view);
 
@@ -107,7 +107,7 @@ app.get('/b', function(req, res) {
 app.get('/bdesign', bdesign.view);
 app.get('/submitb', submit.viewb);
 app.get('/pagesb/:category', category.viewb);
-app.get('/pagesb/:category/:hash/:title_cut', post.viewb);
+app.get('/pagesb/:category/:id/:title_cut', post.viewb);
 app.get('/loginb', login.viewb);
 app.get('/profileb', profile.viewb);
 

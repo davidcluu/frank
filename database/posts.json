@@ -1,0 +1,106 @@
+[
+  {
+    "title" : "This is a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long description testing truncate.",
+    "img-src" : "/images/temp/sample-pants.jpg",
+    "username" : "Unidan",
+    "category" : "Clothing",
+    "category-short" : "clothing",
+    "upvotes" : 100,
+    "downvotes" : 20,
+    "comments": [
+      {
+        "text" : "That\"s so ... 2016",
+        "upvotes" : 1,
+        "downvotes" : 2
+      },
+      {
+        "text" : "What a cute pair of pants!",
+        "upvotes" : 3,
+        "downvotes" : 4
+      },
+      {
+        "text" : "I r8 8/8 m8.",
+        "upvotes" : 5,
+        "downvotes" : 6
+      }
+    ]
+  },
+  {
+    "title" : "Sample T-Shirt",
+    "img-src" : "/images/temp/sample-shirt.jpg",
+    "username" : "_vargas_",
+    "category" : "Clothing",
+    "category-short" : "clothing",
+    "upvotes" : 99,
+    "downvotes" : 30,
+    "comments": [
+      {
+        "text" : "That\"s so ... 2016",
+        "upvotes" : 1,
+        "downvotes" : 2
+      },
+      {
+        "text" : "What a cute pair of pants!",
+        "upvotes" : 3,
+        "downvotes" : 4
+      },
+      {
+        "text" : "I r8 8/8 m8.",
+        "upvotes" : 5,
+        "downvotes" : 6
+      }
+    ]
+  },
+  {
+    "title" : "Sample Outfit",
+    "img-src" : "/images/temp/sample-outfit.jpg",
+    "username" : "mike-pants",
+    "category" : "Clothing",
+    "category-short" : "clothing",
+    "upvotes" : 98,
+    "downvotes" : 40,
+    "comments": [
+      {
+        "text" : "That\"s so ... 2016",
+        "upvotes" : 1,
+        "downvotes" : 2
+      },
+      {
+        "text" : "What a cute pair of pants!",
+        "upvotes" : 3,
+        "downvotes" : 4
+      },
+      {
+        "text" : "I r8 8/8 m8.",
+        "upvotes" : 5,
+        "downvotes" : 6
+      }
+    ]
+  },
+  {
+    "title" : "Sample Shoes",
+    "img-src" : "/images/temp/sample-shoes.jpg",
+    "username" : "jstrydor",
+    "category" : "Shoes",
+    "category-short" : "shoes",
+    "upvotes" : 97,
+    "downvotes" : 50,
+    "comments": [
+      {
+        "text" : "That\"s so ... 2016",
+        "upvotes" : 1,
+        "downvotes" : 2
+      },
+      {
+        "text" : "What a cute pair of pants!",
+        "upvotes" : 3,
+        "downvotes" : 4
+      },
+      {
+        "text" : "I r8 8/8 m8.",
+        "upvotes" : 5,
+        "downvotes" : 6
+      }
+    ]
+  }
+]

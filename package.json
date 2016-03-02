@@ -32,7 +32,8 @@
     "express3-handlebars": "*",
     "mongodb": "*",
     "mongoose": "*",
-    "multer": "1.1.0"
+    "multer": "1.1.0",
+    "gridfs-stream": "1.1.1"
   },
   "engines": {
     "node": "0.10.x"

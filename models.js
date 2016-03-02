@@ -16,17 +16,16 @@ var UserSchema = new Schema({
 });
 
 var PostSchema = new Schema({
-  'text': String,
+  'title': String,
   'img_src': String,
   'user': { type: Schema.Types.ObjectId, ref: 'User' },
   'category': { type: Number, ref: 'Category'},
   'upvotes': Number,
   'downvotes': Number,
-  'comments': { type: Schema.Types.ObjectId, ref: 'Comment'}
+  'comments': [{ type: Schema.Types.ObjectId, ref: 'Comment'}]
 });
 
 var CommentSchema = new Schema({
-  'user': { type: Schema.Types.ObjectId, ref: 'User' },
   'text': String,
   'upvotes': Number,
   'downvotes': Number
@@ -37,10 +36,6 @@ var CategorySchema = new Schema({
   'category': String,
   'short': String
 });
-
-CategorySchema.methods.getShortName = function() {
-
-}
 
 
 /**

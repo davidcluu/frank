@@ -3,7 +3,6 @@
  */
 var models = require('../models');
 
-var posts = require('./placeholders/posts.json');
 var user = require('./placeholders/user.json');
 
 // Render the page
@@ -31,18 +30,26 @@ function isEmptyObject(obj) {
 
 function renderPage(res, pageToRender) {
   models.Category
-    .find()
+    .find({'user.username': 'test'})
     .sort('_id')
     .exec(afterQuery);
 
   function afterQuery(err, categories) {
     if(err) console.log(err);
 
-    var info = {
-      'categories' : categories,
-      'posts' : posts
-    }
+    models.Post
+      .find()
+      .populate('user')
+      .populate('category')
+      .populate('comments')
+      .sort('-upvotes')
+      .exec(function(err, post) {
+        var info = {
+          'categories' : categories,
+          'posts' : post
+        }
 
-    res.render(pageToRender, info);
+        res.render(pageToRender, info);
+      });
   }
 }
