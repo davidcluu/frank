@@ -30,7 +30,7 @@ function isEmptyObject(obj) {
 
 function renderPage(res, pageToRender) {
   models.Category
-    .find({'user.username': 'test'})
+    .find()
     .sort('_id')
     .exec(afterQuery);
 

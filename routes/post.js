@@ -3,9 +3,6 @@
  */
 var models = require('../models');
 
-// Post to render
-var sample_post = require('./placeholders/post1.json');
-
 // Render the page
 exports.view = function(req, res) {
   renderPage(req, res, 'post');
