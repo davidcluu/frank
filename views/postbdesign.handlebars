@@ -91,7 +91,10 @@
                 <button class="btn btn-default">Add</button>
             </div>
 
-            <input type="hidden" name="url" value="/pagesb/{{post/category-short}}/hash/{{truncateURL post/title 20}}" />
+            <input type="hidden" name="base" value="pagesb" />
+            <input type="hidden" name="category" value="{{post/category/short}}" />
+            <input type="hidden" name="id" value="{{post/_id}}" />
+            <input type="hidden" name="title" value="{{truncateURL post/title 20}}" />
         </form>
     </div>
 
