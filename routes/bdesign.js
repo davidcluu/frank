@@ -1,14 +1,22 @@
 /*
  * GET bdesign Page
  */
-
-var categories = require('./placeholders/categories.json');
-
-var info = {
-  'categories' : categories
-}
+var models = require('../models');
 
 // Render the page
 exports.view = function(req, res) {
-  res.render('bdesign', info);
+  models.Category
+    .find()
+    .sort('_id')
+    .exec(afterQuery);
+
+  function afterQuery(err, categories) {
+    if(err) console.log(err);
+
+    var info = {
+      'categories' : categories
+    }
+
+    res.render('bdesign', info);
+  }
 };

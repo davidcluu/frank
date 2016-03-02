@@ -1,18 +1,30 @@
 /*
  * GET Post Page
  */
-
-var categories = require('./placeholders/categories.json');
-
-var info = {
-  'categories' : categories
-}
+var models = require('../models');
 
 // Render the page
 exports.view = function(req, res) {
-  res.render('submit', info);
+  renderPage(res, 'submit');
 };
 
 exports.viewb = function(req, res) {
-  res.render('submitbdesign', info);
+  renderPage(res, 'submitbdesign');
 };
+
+function renderPage(res, pageToRender) {
+  models.Category
+    .find()
+    .sort('_id')
+    .exec(afterQuery);
+
+  function afterQuery(err, categories) {
+    if(err) console.log(err);
+
+    var info = {
+      'categories' : categories
+    }
+
+    res.render(pageToRender, info);
+  }
+}

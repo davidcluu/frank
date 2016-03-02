@@ -32,19 +32,19 @@
 
 <body>
 
-    {{> nav}}
+    {{> navbdesign}}
 
     <!-- /.container -->
 
     <div class="edit-button">
-    	<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
     </div>
     <div class="module">
-    	<div class="profile-info">
-    		<h3>{{username}}</h3>
+      <div class="profile-info">
+        <h3>{{username}}</h3>
 
-    	</div>
-    	<h5>POSTS</h5>
+      </div>
+      <h5>POSTS</h5>
         <div class="row">
             {{#each posts}}
                 <div class="col-xs-12 col-min-padding">
@@ -83,7 +83,7 @@
                 </div>
             {{/each}}
             <div class="no-posts">
-            	{{noPosts}}
+              {{noPosts}}
             </div>
         </div>
     </div>

@@ -20,19 +20,56 @@ exports.viewb = function(req, res) {
   res.render('loginbdesign', info);
 };
 
-var user = require('./placeholders/user.json');
+/**
+ * POST Login
+ */
+var models = require('../models');
+var currUser = require('./placeholders/user.json');
 
 exports.login = function(req, res) {
   var username = req.query.username;
   var password = req.query.password;
 
-  user["username"] = username;
-  user["password"] = password;
+  models.User
+    .find({
+      'username' : username,
+      'password' : password
+    })
+    .exec(attemptLogin);
 
-  if (isB) {
-    res.redirect('/b');
-  }
-  else {
-    res.redirect('/');
+  function attemptLogin(err, queryRes) {
+    if(err) console.log(err);
+
+    // Invalid username
+    if (queryRes.length == 0) {
+      console.log('Invalid username or password');
+
+      errRedirect();
+    }
+    // Successful login
+    else {
+      currUser["username"] = username;
+      currUser["password"] = password;
+
+      sucRedirect();
+    }
+
+    function sucRedirect() {
+      if (isB) {
+        res.redirect('/b');
+      }
+      else {
+        res.redirect('/');
+      }      
+    }
+
+    function errRedirect() {
+      if (isB) {
+        res.redirect('/loginb');
+      }
+      else {
+        res.redirect('/login');
+      }
+    }
   }
 }

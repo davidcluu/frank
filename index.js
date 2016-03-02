@@ -6,6 +6,7 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars');
 var multer = require('multer');
+var mongoose = require('mongoose');
 
 
 /**
@@ -18,6 +19,16 @@ var post = require('./routes/post');
 var login = require('./routes/login');
 var bdesign = require('./routes/bdesign');
 var profile = require('./routes/profile');
+
+
+/**
+ * Database
+ */
+var local_database_name = 'frank_app';
+var local_database_uri  = 'mongodb://localhost/' + local_database_name
+var database_uri = process.env.MONGOLAB_URI || local_database_uri
+
+var MongoDB = mongoose.connect(database_uri).connection;
 
 
 /**
@@ -83,7 +94,7 @@ app.get('/submit', submit.view);
 app.get('/pages/:category', category.view);
 app.get('/pages/:category/:hash/:title_cut', post.view);
 app.get('/login', login.view);
-app.get('/post-login', login.login);
+app.get('/profile', profile.view);
 
 /**
  * B-Design Route handlers
@@ -93,13 +104,18 @@ app.get('/b', function(req, res) {
   isB = true;
   index.viewb(req, res);
 });
-app.get('/bdesign', bdesign.view)
+app.get('/bdesign', bdesign.view);
 app.get('/submitb', submit.viewb);
 app.get('/pagesb/:category', category.viewb);
 app.get('/pagesb/:category/:hash/:title_cut', post.viewb);
 app.get('/loginb', login.viewb);
-app.get('/profile', profile.view);
+app.get('/profileb', profile.viewb);
 
+
+/**
+ * Other Route handlers
+ */
+app.get('/post-login', login.login);
 
 /**
  * POST handlers

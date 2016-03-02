@@ -1,41 +1,48 @@
 /*
  * GET Home Page
  */
+var models = require('../models');
 
-var categories = require('./placeholders/categories.json');
 var posts = require('./placeholders/posts.json');
-
 var user = require('./placeholders/user.json');
-
-var info = {
-  'categories' : categories,
-  'category' : categories[0],
-  'posts' : posts
-}
 
 // Render the page
 exports.view = function(req, res) {
-  // Not logged in
   if ( isEmptyObject(user) ) {
     res.redirect('/login');
   }
-  // Logged in
   else {
-    res.render('index', info);
+    renderPage(res, 'index');
   }
 };
 
 exports.viewb = function(req, res) {
-  // Not logged in
   if ( isEmptyObject(user) ) {
     res.redirect('/loginb');
   }
-  // Logged in
   else {
-    res.render('indexbdesign', info);
+    renderPage(res, 'indexbdesign');
   }
 };
 
 function isEmptyObject(obj) {
   return Object.keys(obj).length == 0;
+}
+
+function renderPage(res, pageToRender) {
+  models.Category
+    .find()
+    .sort('_id')
+    .exec(afterQuery);
+
+  function afterQuery(err, categories) {
+    if(err) console.log(err);
+
+    var info = {
+      'categories' : categories,
+      'posts' : posts
+    }
+
+    res.render(pageToRender, info);
+  }
 }

@@ -1,25 +1,36 @@
 /*
  * GET Post Page
  */
-
-// Render the page
-exports.view = function(req, res) {
-  res.render('post', info);
-};
-
-exports.viewb = function(req, res) {
-  res.render('postbdesign', info);
-};
-
-var categories = require('./placeholders/categories.json');
+var models = require('../models');
 
 // Post to render
 var sample_post = require('./placeholders/post1.json');
 
+// Render the page
+exports.view = function(req, res) {
+  renderPage(res, 'post');
+};
 
-var info = {
-  'categories' : categories,
-  'post' : sample_post
+exports.viewb = function(req, res) {
+  renderPage(res, 'postbdesign');
+};
+
+function renderPage(res, pageToRender) {
+  models.Category
+    .find()
+    .sort('_id')
+    .exec(afterQuery);
+
+  function afterQuery(err, categories) {
+    if(err) console.log(err);
+
+    var info = {
+      'categories' : categories,
+      'post' : sample_post
+    }
+
+    res.render(pageToRender, info);
+  }
 }
 
 
