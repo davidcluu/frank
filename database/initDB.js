@@ -3,7 +3,6 @@
  */
 var mongoose = require('mongoose');
 var fs = require('fs');
-var grid = require('gridfs-stream');
 var models   = require('../models');
 
 /**
@@ -13,8 +12,6 @@ var local_database_name = 'frank_app';
 var local_database_uri  = 'mongodb://localhost/' + local_database_name
 var database_uri = process.env.MONGOLAB_URI || local_database_uri
 mongoose.connect(database_uri);
-
-grid.mongo = mongoose.mongo;
 
 
 /**

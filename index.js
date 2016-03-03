@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var http = require('http');
+var request = require('request');
 var path = require('path');
 var handlebars = require('express3-handlebars');
 var multer = require('multer');
@@ -19,7 +20,6 @@ var post = require('./routes/post');
 var login = require('./routes/login');
 var bdesign = require('./routes/bdesign');
 var profile = require('./routes/profile');
-
 
 /**
  * Database
@@ -122,33 +122,70 @@ app.get('/post-login', login.login);
  */
 app.post('/submit-post', multer().any(), function(req, res) { 
   var user = require("./routes/placeholders/user.json");
-  var data = require("./routes/placeholders/posts.json");
 
   var comment = req.body.comment;
   var category = req.body.category;
 
-  var newPost = {
-    "title" : comment,
-    "img-src" : "http://lorempixel.com/500/500/people/",
-    "username" : user.username,
-    "category" : category,
-    "category-short" : shortenCategory(category),
-    "upvotes" : 0,
-    "downvotes" : 0,
-    "comments": []
-  };
+  var image = req.files[0].buffer.toString('base64');
+  var auth = 'Client-ID ' + '1427c2ed5bef32f';
 
-  data.push(newPost);
+  var opts = {
+    uri: 'https://api.imgur.com/3/image',
+    headers: { 
+      Authorization: auth
+    },
+    body: image,
+  }
+  request.post(opts, function(e, r, body) {
+    if (e) {
+      console.log('Error: ' + e);
+    } 
+    else if (r.statusCode !== 200 || body.error) {
+      console.log(r.statusCode);
+      console.log('Body error: ' + body);
+    }
+    else {
+      console.log("upload success");
 
-  if (isB) {
-    res.redirect('/b');
-  }
-  else {
-    res.redirect('/');
-  }
- });
+      var models = require('./models.js');
+
+      models.User
+        .find({'username': user.username})
+        .exec(function (err, user) {
+          if(err) console.log(err);
+
+          models.Category
+            .find({'category': category})
+            .exec(function (err, category) {
+              if(err) console.log(err);
+
+              var newPost = new models.Post({
+                "title" : comment,
+                "img_src" : JSON.parse(body).data.link,
+                "user" : user[0]['_id'],
+                "category" : category[0]['_id'],
+                "upvotes" : 0,
+                "downvotes" : 0,
+                "comments": []
+              });
+
+              newPost.save(function (err) {
+                if(err) console.log(err);
+                else console.log("Saved");
+
+                if (isB) {
+                  res.redirect('/b');
+                }
+                else {
+                  res.redirect('/');
+                }
+              })
+            });
+          });
+    }
+  });
+});
 app.post('/post-comment', post.post);
-
 
 /**
  * Route handler helper functions
