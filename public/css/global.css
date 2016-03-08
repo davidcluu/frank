@@ -20,23 +20,29 @@ padding-right: 2.4%;
 /* Navbar */
 
 .navbar {
-  background-color: black !important; 
+  background-color: black !important;
   border: 0 !important;
 }
 
 .navbar-brand {
   color: #000;
-  padding-top: 9px;
+  padding-top: 23px;
 }
 
 .navbar-header {
+  background-color: white;
+  padding-bottom: 0px;
+}
+
+.btn-group {
   background-color: black;
-  padding-bottom: 5px;
+
 }
 
 .btn {
   border:0px solid transparent;
-  background-color: black;
+  background-color: #b3b3b3;
+  border-radius: 0px;
 }
 
 .btn a:active, a:focus, a:hover {
@@ -150,4 +156,13 @@ padding-right: 2.4%;
   border-radius: 0;
   background-color: blue;
   font-size: 24px;
+}
+
+.container {
+  background-color: white;
+}
+
+.navbar-header .img {
+  padding-top: 300px;
+
 }
