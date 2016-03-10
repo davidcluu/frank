@@ -27,29 +27,26 @@ function renderPage(res, pageToRender) {
 
     var username = user['username'];
 
-    var userPosts = [];
-    for (var i = 0; i < posts.length; i++) {
-      var newPost = posts[i];
-      console.log(posts[i].username);
-      if (posts[i].username == username) {
-        userPosts.push(newPost);
-      }
-    }
+    models.Post
+      .find({'user' : user.id})
+      .populate('user')
+      .populate('category')
+      .populate('comments')
+      .sort('-upvotes')
+      .exec(function(err, userPosts) {
+        if (userPosts < 1) {
+          var noPosts = "No Posts to display. Try submitting one!";
+        }
 
-    if (userPosts < 1) {
-      var noPosts = "No Posts to display. Try submitting one!";
-    }
+        var info = {
+          'username' : username,
+          'categories' : categories,
+          'category' : categories[0],
+          'posts' : userPosts,
+          'noPosts' : noPosts
+        }
 
-    console.log(userPosts);
-
-    var info = {
-      'username' : username,
-      'categories' : categories,
-      'category' : categories[0],
-      'posts' : userPosts,
-      'noPosts' : noPosts
-    }
-
-    res.render(pageToRender, info);
+        res.render(pageToRender, info);
+      });
   }
 }

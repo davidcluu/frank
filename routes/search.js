@@ -17,6 +17,6 @@ exports.view = function(req, res) {
       'categories' : categories
     }
 
-    res.render('bdesign', info);
+    res.render('search', info);
   }
 };

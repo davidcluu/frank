@@ -23,6 +23,7 @@
     <link href="/css/profile.css" rel="stylesheet">
     <!--Category CSS -->
     <link href="/css/category.css" rel="stylesheet">
+  
 
     <!-- Global JS -->
     <script src="/js/global.js"></script>
@@ -32,25 +33,25 @@
 
 <body>
 
-    {{> navbdesign}}
+    {{> nav}}
 
     <!-- /.container -->
 
     <div class="edit-button">
-      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+    	<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
     </div>
     <div class="module">
-      <div class="profile-info">
-        <h3>{{username}}</h3>
+    	<div class="profile-info">
+    		<h3>{{username}}</h3>
 
-      </div>
-      <h5>POSTS</h5>
+    	</div>
+    	<h5>POSTS</h5>
         <div class="row">
             {{#each posts}}
                 <div class="col-xs-12 col-min-padding">
                     <div class="post-box">
-                        <a href="/pagesb/{{category-short}}/hash/{{truncateURL title 20}}">
-                            <img src="{{img-src}}" class="post-picture" alt="{{title}}">
+                        <a href="/pagesb/{{category/short}}/{{_id}}/{{truncateURL title 20}}">
+                            <img src="{{img_src}}" class="post-picture" alt="{{title}}">
                         </a>
                         <div class="post-text">
                             <div class="title-description">
@@ -64,18 +65,18 @@
                                         </div>
                                     </div>
                                     <div class="left">
-                                        <h5>{{username}}</h5>
+                                        <h5>{{user/username}}</h5>
                                         <div class="caption">{{truncate title 140}}</div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="show-comments">
-                                <a href="/pagesb/clothing/hash/this_is_a_very_very_">view comments</a>
+                                <a href="/pagesb/{{category/short}}/{{_id}}/{{truncateURL title 20}}">view comments</a>
                             </div>
 
                             <div class="category">
-                                <a href="/pagesb/{{category-short}}">#{{category-short}}</a>
+                                <a href="/pagesb/{{category/short}}">#{{category/short}}</a>
                             </div>
                         </div>
                     </div>
@@ -83,7 +84,7 @@
                 </div>
             {{/each}}
             <div class="no-posts">
-              {{noPosts}}
+            	{{noPosts}}
             </div>
         </div>
     </div>

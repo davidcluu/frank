@@ -72,11 +72,11 @@ padding-right: 2.4%;
   cursor: hand;
 }
 
-.upvoted .arrow.up, .upvoted .score.upvote {
+.upvoted .glyphicon-arrow-up, .upvoted .score.upvote {
   color: #f00;
 }
 
-.downvoted .arrow.down, .downvoted .score.downvote {
+.downvoted .glyphicon-arrow-down, .downvoted .score.downvote {
   color: #00f;
 }
 
