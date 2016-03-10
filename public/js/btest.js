@@ -13,6 +13,6 @@ function initializePage() {
 	// your code here
 		$(".search-btn").click(function(e) {
 			console.log("search clicked");
-		ga("send", "event", 'search-variation', 'click');
+		ga("send", "event", 'search-variation', 'click', 'bsearch');
 	});
 }
