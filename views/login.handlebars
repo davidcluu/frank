@@ -36,16 +36,20 @@
 </head>
 
 <body>
-  /* Login Page */
   <div id="fullscreen_bg" class="fullscreen_bg"/>
-  <img src="images/logo.svg" class="logo"/>
+  <img src="images/logowhite.svg" class="logo"/>
   <div class="container">
-  	<form action="/post-login" class="form-signin">
-  		<input type="text" class="form-control" placeholder="Email address" required="frank@ucsd.edu" autofocus="" name="username">
-  		<input type="password" class="form-control" placeholder="Password" required="frank" name="password">
+    <div class="input-fields">
+    	<form action="/post-login" class="form-signin">
+    		<input type="text" class="form-control" placeholder="Email address" required="frank@ucsd.edu" autofocus="" name="username">
+    		<input type="password" class="form-control" placeholder="Password" required="frank" name="password">
+      </form>
+    </div>
+    <div class="login-button">
   		<button class="btn btn-lg btn-primary btn-block" type="submit">
-  			Login
+  			<div class="button-txt">Login</div>
   		</button>
+    </class>
   	</form>
 
   </div>
