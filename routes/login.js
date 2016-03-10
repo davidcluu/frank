@@ -48,6 +48,7 @@ exports.login = function(req, res) {
     }
     // Successful login
     else {
+      currUser.id = queryRes[0]['_id'];
       currUser.username = queryRes[0].username;
       currUser.password = queryRes[0].password;
       currUser.submitted_posts = queryRes[0].submitted_posts;

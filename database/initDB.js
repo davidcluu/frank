@@ -21,12 +21,13 @@ initialize();
 
 function initialize() {
   // Boolean Flags
-  var userSaved = false;
+  var user1Saved = false;
+  var user2Saved = false;
   var categoriesSaved = false;
   var postsSaved = false;
 
   function canClose() {
-    return (userSaved && categoriesSaved && postsSaved);
+    return (user1Saved && user2Saved && categoriesSaved && postsSaved);
   }
 
 
@@ -73,13 +74,26 @@ function initialize() {
   function addUsers(err) {
     if(err) console.log(err);
 
-    var json = require('./user1.json');
-    var user = new models.User(json);
-    user.save(function(err, user) {
+    var json1 = require('./user1.json');
+    var user1 = new models.User(json1);
+    user1.save(function(err, user) {
       if(err) console.log(err);
 
       console.log('Saved User ' + user.username);
-      userSaved = true;
+      user1Saved = true;
+
+      if (canClose()) {
+        mongoose.connection.close();
+      }
+    });
+
+    var json2 = require('./user2.json');
+    var user2 = new models.User(json2);
+    user2.save(function(err, user) {
+      if(err) console.log(err);
+
+      console.log('Saved User ' + user.username);
+      user2Saved = true;
 
       if (canClose()) {
         mongoose.connection.close();
@@ -119,7 +133,7 @@ function initialize() {
         json.downvotes = posts[i].downvotes;
 
         models.User
-          .find({'username': 'test'})
+          .find({'username': 'test2'})
           .exec(function(err, user) {
             posts_AfterUser(err, user, i, json);
           });
