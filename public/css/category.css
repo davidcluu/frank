@@ -198,3 +198,8 @@ transition: width  0.2s ease-in-out;
 .search-query:focus{
     width: 260px;
 }
+
+.no-posts {
+  font-size: 12px;
+  color: #BDBDBD;
+}
