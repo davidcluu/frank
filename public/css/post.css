@@ -47,10 +47,10 @@
 
 .post-username {
   padding-bottom: 10px;
+  padding-left: 3%;
 }
 
 .post-text {
-  font-style: italic;
   font-size: 12px;
 }
 
@@ -60,6 +60,8 @@
   font-size: 12px;
   font-weight: bold;
   border-bottom: 1px solid #e6e6e6;
+  font-family: Helvetica;
+  letter-spacing: 1.5;
 }
 
 .comment {
@@ -103,6 +105,45 @@
   font-weight: bold;
 }
 
-.form-group .btn {
-  background-color: #cccccc;
+.add-txt {
+  text-transform: uppercase;
+  font-family: Trebuchet MS;
+  letter-spacing: 1.75px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.form-group input {
+  border-radius: 0;
+  border-color: #ccc;
+  background-color: #F8F8F8;
+  opacity: 0.5;
+}
+
+.form-group input:focus {
+  border-color: purple;
+  box-shadow: none;
+}
+
+.add-btn, .add-btn:active {
+  width: 100%;
+  background-color: #731D9A;
+  margin-top: 15px;
+  padding: 10px 0;
+  box-shadow: 2px 3px 3px rgba(230, 230, 230, 0.20);
+  border-outline: none;
+}
+
+ .add-btn:hover, .add-btn:focus {
+  width: 100%;
+  background-color: #4B1564 !important;
+  margin-top: 15px;
+  padding: 10px 0;
+  box-shadow: 2px 3px 3px rgba(230, 230, 230, 0.20);
+  border-outline: none;
+
 }

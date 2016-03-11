@@ -20,6 +20,8 @@
     <!-- Global CSS -->
     <link href="/css/global.css" rel="stylesheet">
     <!-- Page Specific CSS -->
+    <link href="/css/category.css" rel="stylesheet">
+    <!-- Page Specific CSS -->
     <link href="/css/post.css" rel="stylesheet">
 
     <!-- Global JS -->
@@ -44,14 +46,15 @@
             <div class="caption-box">
                 <div class="right">
                     <div class="score unvoted" id="{{post/_id}}">
-                        <span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
+                        <span class="arrow up"><i class="glyphicon glyphicon-chevron-up"></i></span>
                         <span class="score upvote">{{post/upvotes}}</span>
-                        <span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                        <span class="arrow down"><i class="glyphicon glyphicon-chevron-down"></i></span>
                         <span class="score downvote">{{post/downvotes}}</span>
                     </div>
                 </div>
                 <div class="left">
                     <div>
+                    <div class="post-username">
                         {{post/user/username}}
                     </div>
                     <div class="post-text">
@@ -70,9 +73,9 @@
             <div class="commentbox">
                 <div class="left">
                     <div class="score unvoted" id="{{_id}}">
-                        <p><span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
+                        <p><span class="arrow up"><i class="glyphicon glyphicon-chevron-up"></i></span>
                         <span class="score upvote">{{upvotes}}</span></p>
-                        <p><span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
+                        <span class="arrow down"><i class="glyphicon glyphicon-chevron-down"></i></span>
                         <span class="score downvote">{{downvotes}}</span></p>
                     </div>
                 </div>
@@ -88,16 +91,16 @@
         <!--comment box-->
         <form class="form-inline" role="form" method="post" action="/post-comment">
             <div class="form-group">
-                <input class="form-control" type="text" name="comment" placeholder="Comment here..." />
+                <input class="form-control" type="text" name="comment" placeholder="Leave a comment!" />
             </div>
             <div class="form-group">
-                <button class="btn btn-default">Add</button>
+                <button class="btn btn-default add-btn"><div class="add-txt">Add</div></button>
             </div>
 
-            <input type="hidden" name="base" value="pagesb" />
+            <input type="hidden" name="base" value="post" />
             <input type="hidden" name="category" value="{{post/category/short}}" />
             <input type="hidden" name="id" value="{{post/_id}}" />
-            <input type="hidden" name="title" value="{{truncateURL post/title 20}}" />
+            <input type="hidden" name="title" value="{{truncateURL post/title 20}}/#comments" />
         </form>
     </div>
 
