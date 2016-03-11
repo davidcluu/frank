@@ -87,5 +87,5 @@ function doSearchB (e) {
   var searchVal = $('#search-field').val().replace(/\s+/g, ' ').toLowerCase();
 
   // Redirect
-  $(location).attr('href', '/pagesb/' + searchVal);
+  $(location).attr('href', '/pages/' + searchVal);
 }

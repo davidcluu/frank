@@ -92,7 +92,7 @@ app.use(express.json());
 app.get('/', index.view);
 app.get('/submit', submit.view);
 app.get('/pages/:category', category.view);
-app.get('/pages/:category/:id/:title_cut', post.view);
+app.get('/post/:category/:id/:title_cut', post.view);
 app.get('/login', login.view);
 app.get('/profile', profile.view);
 app.get('/search', search.view);

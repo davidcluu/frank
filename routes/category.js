@@ -31,7 +31,7 @@ function renderPage(req, res, pageToRender) {
 
       function afterQuery(err, categories) {
         if(err) console.log(err);
-
+        
         var info = {
           'categories' : categories,
           'category' : categoryName,
