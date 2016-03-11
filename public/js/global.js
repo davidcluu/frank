@@ -4,34 +4,23 @@ $(function(){
   $("#search-nav-toggle").click( doExpandSearchContainer );
   $("#search-button").click( doSearch );
   $("#search-button-b").click( doSearchB );
+
   colorNavigation();
+
+  $(window).on('scroll', onScroll);
+  onScroll();
+
+  $('.fadein').slice(1).each( function() {
+    $(this).velocity({
+      translateY: 70
+    }, 0);
+  })
 });
-
-function colorNavigation() {
-  var url = window.location.href;
-  if (url.indexOf('search') > -1) {
-      $('#navbar .glyphicon-search').css('color', 'purple');
-      console.log('on the search page');
-  }
-  else if (url.indexOf('submit') > -1) {
-      $('#navbar .glyphicon-plus').css('color', 'purple');
-      console.log('on the search page');
-  }
-  else if (url.indexOf('profile') > -1) {
-      $('#navbar .glyphicon-bell').css('color', 'purple');
-      console.log('on the search page');
-  }
-  else {
-      $('#navbar .glyphicon-home').css('color', 'purple');
-      console.log('on the search page');
-  }
-}
-
 
 
 // Expand Category container
 var categoryExpanded = false;
-function doExpandCategoryContainer () {
+function doExpandCategoryContainer() {
   var inner = $("#category-nav-inner");
   var outer = $("#category-nav-outer");
 
@@ -50,9 +39,10 @@ function doExpandCategoryContainer () {
   categoryExpanded = !categoryExpanded;
 }
 
+
 // Expand Search container
 var searchExpanded = false;
-function doExpandSearchContainer () {
+function doExpandSearchContainer() {
   var inner = $("#search-nav-inner");
   var outer = $("#search-nav-outer");
 
@@ -72,7 +62,7 @@ function doExpandSearchContainer () {
 }
 
 
-function doSearch (e) {
+function doSearch(e) {
   e.preventDefault();
 
   var searchVal = $('#search-field').val().replace(/\s+/g, ' ').toLowerCase();
@@ -81,11 +71,51 @@ function doSearch (e) {
   $(location).attr('href', '/pages/' + searchVal);
 }
 
-function doSearchB (e) {
+function doSearchB(e) {
   e.preventDefault();
 
   var searchVal = $('#search-field').val().replace(/\s+/g, ' ').toLowerCase();
 
   // Redirect
   $(location).attr('href', '/pages/' + searchVal);
+}
+
+
+function colorNavigation() {
+  var url = window.location.href;
+  if (url.indexOf('search') > -1) {
+    $('#navbar .glyphicon-search').css('color', 'purple');
+  }
+  else if (url.indexOf('submit') > -1) {
+    $('#navbar .glyphicon-plus').css('color', 'purple');
+  }
+  else if (url.indexOf('profile') > -1) {
+    $('#navbar .glyphicon-bell').css('color', 'purple');
+  }
+  else {
+    $('#navbar .glyphicon-home').css('color', 'purple');
+  }
+}
+
+
+function onScroll() {
+  var docViewBottom = $(window).scrollTop() + $(window).height();
+
+  $('.post-box').each(function() {
+    fadeInElement($(this), $(this), docViewBottom);
+  });
+
+  function fadeInElement(eTrig, e, docbot) {
+    if (e.hasClass('fadein')) {
+      var offset = eTrig.offset().top;
+      if (docViewBottom > offset)
+        e.velocity({
+          opacity: 1,
+          translateY: 0
+        }, {
+          duration: 350,
+          easing: 'linear'
+        });
+    }
+  }
 }

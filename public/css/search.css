@@ -11,8 +11,7 @@
 
 .input-group #search-field:active, .input-group #search-field:focus {
   border-color: #750096;
-  box-shadow: none;
-  outline: 0 none !important;
+  box-shadow: 0 0 10px #750096;
 }
 
 .input-group .input-group-btn {
