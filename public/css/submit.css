@@ -1,3 +1,4 @@
+
 #submit-form {
   margin:0 2%;
 }
@@ -5,17 +6,34 @@
 .previewObj {
   width: 90%;
   margin: auto;
-  border: 3px solid #aaa;
+  border: 3px dashed #ECE0F8;
   text-align: center;
 }
 
 #previewPlaceholder {
   display:table;
+  background-color: #FDF9FE;
+}
+
+
+#previewPlaceholder p {
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  color: #8B69A1;
+  opacity: 0.75;
+  padding-top: 20px;
+}
+
+.preview-image {
+  width: 20%;
+  padding-top: 30%;
+  opacity: 0.75;
 }
 
 #previewPlaceholder span {
   display:table-cell;
   vertical-align:middle;
+
 
   font-size: 40px;
 }
@@ -26,4 +44,35 @@
 
 #submit-form {
   margin-top: 20px;
+}
+
+label {
+  font-family: Trebuchet MS;
+  font-size: 14px;
+}
+
+.form-group {
+  width: 90%;
+  margin: auto;
+}
+
+
+.form-group textarea {
+  border-radius: 0;
+  border-color: #ccc;
+  background-color: #DDDDDD;
+  opacity: 0.40;
+
+}
+
+.form-group textarea:focus {
+  border-color: #AA7CC9;
+  opacity: 0.5;
+  box-shadow: none;
+}
+
+
+.form-control {
+  border-radius: 0;
+  -webkit-appearance: none;
 }
