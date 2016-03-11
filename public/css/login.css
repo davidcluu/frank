@@ -13,6 +13,10 @@ img.logo {
   padding-top: 40%;
 }
 
+.input-fields {
+  padding-top: 40px;
+}
+
 .fullscreen_bg {
   position: fixed;
   top: 0;
@@ -24,7 +28,7 @@ img.logo {
   background-color: #8A2BE2;
 }
 .form-signin {
-  max-width: 280px;
+  max-width: 260px;
   padding-top: 15px;
   margin: 0 auto;
 }
@@ -49,6 +53,8 @@ img.logo {
 
 .form-signin input {
   font-family: Geneva;
+  color: #fff;
+
 }
 
 .form-signin input[type="text"] {
@@ -60,6 +66,7 @@ img.logo {
   border-bottom-color: #fff;
   margin-bottom: 5px;
 }
+
 .form-signin input[type="password"] {
   margin-bottom: 15px;
   border-radius: 0px;
@@ -68,13 +75,15 @@ img.logo {
   color: #fff;
   box-shadow: none;
   border-bottom-color: #fff;
+  margin-bottom: 20px;
 }
 
 input::-webkit-input-placeholder {
   font-size: 10px;
   text-transform: uppercase;
+  letter-spacing: 1.5px;
   color: #fff !important;
-  opacity: 0.5;
+  opacity: 0.65;
   padding: 0px;
   font-weight: 600;
 }
@@ -97,9 +106,11 @@ input::-webkit-input-placeholder {
   font-family: Trebuchet MS;
 }
 
-.login-button:focus:active
+.btn:active
 {
- background-color: yellow;
+ background-color: #F2F2F2 !important;
+ opacity: 0.75;
+ box-shadow: inline 2px 3px 3px rgba(0, 0, 1, 0.20);
 }
 
 .button-txt {
@@ -107,6 +118,15 @@ input::-webkit-input-placeholder {
   font-size: 16px;
   text-transform: uppercase;
   font-weight: bolder;
+}
+
+a {
+  color: #fff;
+}
+
+.signup {
+  float: right;
+  padding-top: 10px;
 }
 
 
