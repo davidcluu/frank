@@ -18,7 +18,7 @@ function colorNavigation() {
       console.log('on the search page');
   }
   else if (url.indexOf('profile') > -1) {
-      $('.glyphicon-user').css('color', 'purple');
+      $('.glyphicon-bell').css('color', 'purple');
       console.log('on the search page');
   }
   else {
