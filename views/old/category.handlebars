@@ -43,11 +43,11 @@
     -->
 
     <div class="module">
-        <div class="page-title">
-            <h5>{{category/short}}</h5>
-        </div>
         <div class="row">
             {{#each posts}}
+            <div class="page-title">
+                <h5>{{category}}</h5>
+            </div>
                 <div class="col-xs-12 col-min-padding">
                     <div class="post-box">
                         <a href="/pages/{{category/short}}/{{_id}}/{{truncateURL title 20}}">

@@ -1,6 +1,7 @@
 body {
-  margin: 0px 0;
+  margin-top: 0px 0;
   margin-bottom: 60px;
+  top: 100px;
 }
 
 li {
@@ -10,6 +11,16 @@ li {
 ul {
 padding-left: 2.4%;
 padding-right: 2.4%;
+}
+
+.page-title h5 {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  font-family: Helvetica;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ABABAB;
+  text-align: left;
 }
 
 .container .row .col-md-6 {
