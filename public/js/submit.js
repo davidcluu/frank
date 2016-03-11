@@ -11,6 +11,10 @@ $(function(){
   $("#imageInput").change(function(){
     updatePreviewImage(this);
   });
+
+  $('.previewObj').click( function() {
+    $(".form-control-file").click();
+  } );
 });
 
 function updatePreviewImage(input) {
@@ -28,3 +32,5 @@ function updatePreviewImage(input) {
     reader.readAsDataURL(input.files[0]);
   }
 }
+
+$()

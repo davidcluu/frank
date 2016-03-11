@@ -3,16 +3,28 @@
   margin:0 2%;
 }
 
+label {
+  font-family: Helvetica;
+  font-size: 13px;
+  text-transform: uppercase;
+  opacity: 0.75;
+  letter-spacing: 1px;
+}
+
+.upload {
+  text-align: center;
+}
+
 .previewObj {
   width: 90%;
   margin: auto;
-  border: 3px dashed #ECE0F8;
   text-align: center;
 }
 
 #previewPlaceholder {
   display:table;
   background-color: #FDF9FE;
+  border: 3px dashed #ECE0F8;
 }
 
 
@@ -42,25 +54,31 @@
   max-width: 100%;
 }
 
+#previewImageHolder {
+  border: 1px solid #E6E6E6;
+}
+
 #submit-form {
   margin-top: 20px;
 }
 
-label {
-  font-family: Trebuchet MS;
-  font-size: 14px;
+.btn-file {
+  display: none;
 }
 
 .form-group {
   width: 90%;
   margin: auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 
 .form-group textarea {
   border-radius: 0;
   border-color: #ccc;
-  background-color: #eeeeee;
+  background-color: #F8F8F8;
+  opacity: 0.5;
 }
 
 .form-group textarea:focus {
@@ -70,6 +88,28 @@ label {
 
 
 .form-control {
-  border-radius: 0;
-  -webkit-appearance: none;
+  opacity: 0.5;
+  background-color: #F8F8F8;
+}
+
+.form-control:focus {
+  opacity: 0.5;
+  border-color: purple;
+}
+
+.submit-btn {
+  width: 90%;
+  background-color: #731D9A;
+  margin-top: 15px;
+  padding: 10px 0;
+  box-shadow: 2px 3px 3px rgba(0, 0, 1, 0.20);
+  
+}
+
+.submit-txt {
+  text-transform: uppercase;
+  font-family: Trebuchet MS;
+  letter-spacing: 1.75px;
+  font-weight: bold;
+
 }

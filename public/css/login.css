@@ -116,7 +116,7 @@ input::-webkit-input-placeholder {
 
 .btn:hover
 {
- background-color: #F2F2F2 !important;
+ background-color: #FDFDFD !important;
  opacity: 0.75;
  box-shadow: inline 2px 3px 3px rgba(0, 0, 1, 0.20);
 }
@@ -133,6 +133,5 @@ a {
 }
 
 .signup {
-  float: right;
-  padding-top: 10px;
+  opacity: 0.40;
 }
