@@ -44,7 +44,7 @@
 
     <div class="module">
         <div class="page-title">
-            <h5>{{category/short}}</h5>
+            <h5><center>{{category}}</center></h5>
         </div>
         <div class="row">
             {{#each posts}}
@@ -83,6 +83,9 @@
                     <div class="padding"></div>
                 </div>
             {{/each}}
+            <div class="no-posts">
+              {{noPosts}}
+            </div>
         </div>
     </div>
 

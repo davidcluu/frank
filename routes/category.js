@@ -25,7 +25,7 @@ function renderPage(req, res, pageToRender) {
     .find({'category': categoryToID(categoryName)})
     .populate('user')
     .sort('-upvotes')
-    .exec(function(err, post) {
+    .exec(function(err, posts) {
       models.Category
         .find()
         .sort('_id')
@@ -34,10 +34,15 @@ function renderPage(req, res, pageToRender) {
       function afterQuery(err, categories) {
         if(err) console.log(err);
         
+        if (posts < 1) {
+          var noPosts = "No Posts to display for this category.";
+        }
+
         var info = {
           'categories' : categories,
           'category' : categoryName,
-          'posts' : post
+          'posts' : posts,
+          'noPosts' : noPosts
         }
 
         res.render(pageToRender, info);
@@ -53,6 +58,6 @@ function categoryToID(category) {
     case 'makeup': return 4;
     case 'hairstyles': return 5;
     case 'facialhair': return 6;
-    default: console.log("error!");
+    default: return -1;
   }
 }
