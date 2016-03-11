@@ -23,6 +23,7 @@ function renderPage(req, res, pageToRender) {
     .find()
     .populate('category')
     .find({'category': categoryToID(categoryName)})
+    .populate('user')
     .exec(function(err, post) {
       models.Category
         .find()
