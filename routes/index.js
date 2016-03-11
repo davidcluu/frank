@@ -7,7 +7,7 @@ var user = require('./placeholders/user.json');
 
 // Render the page
 exports.view = function(req, res) {
-  if ( isEmptyObject(user) ) {
+  if ( !user.username ) {
     res.redirect('/login');
   }
   else {

@@ -124,3 +124,13 @@ exports.loginAnon = function(req, res) {
     }
   }
 }
+
+exports.logOut = function(req, res) {
+  currUser.id = '';
+  currUser.username = '';
+  currUser.password = '';
+  currUser.submitted_posts = [];
+  currUser.liked_posts = [];
+
+  res.redirect('/');
+}
