@@ -96,6 +96,7 @@ app.get('/post/:category/:id/:title_cut', post.view);
 app.get('/login', login.view);
 app.get('/profile', profile.view);
 app.get('/search', search.view);
+app.get('/get-login-anon', login.loginAnon);
 
 /**
  * Other Route handlers

@@ -135,3 +135,13 @@ a {
 .signup {
   opacity: 0.40;
 }
+
+.anon-login,
+.anon-login:link,
+.anon-login:visited,
+.anon-login:hover,
+.anon-login:active {
+  color: #dabfe3;
+  text-decoration: underline;
+  text-align: center;
+}
