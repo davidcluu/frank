@@ -12,7 +12,10 @@ var UserSchema = new Schema({
   'username': String,
   'password': String,
   'submitted_posts': [{ type: Schema.Types.ObjectId, ref: 'Post' }],
-  'liked_posts': [{ type: Schema.Types.ObjectId, ref: 'Post' }]
+  'voted_posts': [new Schema({
+    'post': { type: Schema.Types.ObjectId, ref: 'Post' },
+    'vote': String
+  })]
 });
 
 var PostSchema = new Schema({

@@ -1,7 +1,10 @@
 // jQuery ready ()
 $(function(){
-  $(".arrow.up").click( doUpvote );
-  $(".arrow.down").click( doDownvote );
+  $(".caption-box .arrow.up").click( doUpvote );
+  $(".caption-box .arrow.down").click( doDownvote );
+
+  $(".commentbox .arrow.up").click( doUpvote );
+  $(".commentbox .arrow.down").click( doDownvote );
 });
 
 

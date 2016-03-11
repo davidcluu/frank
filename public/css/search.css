@@ -1,0 +1,38 @@
+.input-group {
+  box-shadow: 2px 2px 5px #999999;
+}
+
+.input-group #search-field {
+  border-color: white;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #fff;
+}
+
+.input-group #search-field:active, .input-group #search-field:focus {
+  border-color: purple;
+  box-shadow: none;
+  outline: 0 none !important;
+}
+
+.input-group .input-group-btn {
+  border-radius: 0;
+  background-color: purple;
+}
+
+.input-group .input-group-btn .btn {
+  background-color: purple;
+}
+
+#search-button-b .glyphicon.glyphicon-search {
+  color: #fff !important;
+}
+
+ul {
+  padding: 0 !important;
+}
+
+li img {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

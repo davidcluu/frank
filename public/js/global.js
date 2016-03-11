@@ -10,19 +10,19 @@ $(function(){
 function colorNavigation() {
   var url = window.location.href;
   if (url.indexOf('search') > -1) {
-      $('.glyphicon-search').css('color', 'purple');
+      $('#navbar .glyphicon-search').css('color', 'purple');
       console.log('on the search page');
   }
   else if (url.indexOf('submit') > -1) {
-      $('.glyphicon-plus').css('color', 'purple');
+      $('#navbar .glyphicon-plus').css('color', 'purple');
       console.log('on the search page');
   }
   else if (url.indexOf('profile') > -1) {
-      $('.glyphicon-user').css('color', 'purple');
+      $('#navbar .glyphicon-bell').css('color', 'purple');
       console.log('on the search page');
   }
   else {
-      $('.glyphicon-home').css('color', 'purple');
+      $('#navbar .glyphicon-home').css('color', 'purple');
       console.log('on the search page');
   }
 }

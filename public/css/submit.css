@@ -60,14 +60,11 @@ label {
 .form-group textarea {
   border-radius: 0;
   border-color: #ccc;
-  background-color: #DDDDDD;
-  opacity: 0.40;
-
+  background-color: #eeeeee;
 }
 
 .form-group textarea:focus {
-  border-color: #AA7CC9;
-  opacity: 0.5;
+  border-color: purple;
   box-shadow: none;
 }
 

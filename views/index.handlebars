@@ -38,7 +38,7 @@
 
     <div class="module">
         <div class="page-title">
-            <h5>TRENDING</h5>
+            <h5><center>Trending</center></h5>
         </div>
         <div class="row">
             {{#each posts}}
@@ -51,10 +51,17 @@
                             <div class="title-description">
                                 <div class="caption-box">
                                     <div class="right">
+<<<<<<< HEAD
                                         <div class="score unvoted align-right">
                                             <p><span class="arrow up"><i class="glyphicon glyphicon-chevron-up"></i></span>
                                             <span class="score upvote">{{upvotes}}</span>
                                             <span class="arrow down"><i class="glyphicon glyphicon-chevron-down"></i></span>
+=======
+                                        <div class="score unvoted align-right" id="{{_id}}">
+                                            <p><span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
+                                            <span class="score upvote">{{upvotes}}</span></p>
+                                            <p><span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
+>>>>>>> ba5de209334ea83e64b81af7a7f82460c118ebe4
                                             <span class="score downvote">{{downvotes}}</span></p>
                                         </div>
                                     </div>
