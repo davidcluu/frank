@@ -9,8 +9,20 @@ $(function(){
 
 function colorNavigation() {
   var url = window.location.href;
-  if (url.indexOf('bdesign') > -1) {
-      $('.glyphicon-search').css('color', 'red');
+  if (url.indexOf('search') > -1) {
+      $('.glyphicon-search').css('color', 'purple');
+      console.log('on the search page');
+  }
+  else if (url.indexOf('submit') > -1) {
+      $('.glyphicon-plus').css('color', 'purple');
+      console.log('on the search page');
+  }
+  else if (url.indexOf('profile') > -1) {
+      $('.glyphicon-user').css('color', 'purple');
+      console.log('on the search page');
+  }
+  else {
+      $('.glyphicon-home').css('color', 'purple');
       console.log('on the search page');
   }
 }

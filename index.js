@@ -19,6 +19,7 @@ var category = require('./routes/category');
 var post = require('./routes/post');
 var login = require('./routes/login');
 var profile = require('./routes/profile');
+var search = require('./routes/search');
 
 /**
  * Database
@@ -94,7 +95,7 @@ app.get('/pages/:category', category.view);
 app.get('/pages/:category/:id/:title_cut', post.view);
 app.get('/login', login.view);
 app.get('/profile', profile.view);
-
+app.get('/search', search.view);
 
 /**
  * Other Route handlers
@@ -115,7 +116,7 @@ app.post('/submit-post', multer().any(), function(req, res) { 
 
   var opts = {
     uri: 'https://api.imgur.com/3/image',
-    headers: { 
+    headers: {
       Authorization: auth
     },
     body: image,
@@ -123,7 +124,7 @@ app.post('/submit-post', multer().any(), function(req, res) { 
   request.post(opts, function(e, r, body) {
     if (e) {
       console.log('Error: ' + e);
-    } 
+    }
     else if (r.statusCode !== 200 || body.error) {
       console.log(r.statusCode);
       console.log('Body error: ' + body);
