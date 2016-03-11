@@ -94,6 +94,41 @@ padding-right: 2.4%;
   cursor: hand;
 }
 
+.score {
+  color: #b3b3b3;
+  padding-top: 20px;
+}
+
+.score.upvote, .score.downvote{
+  font-size: 12px;
+  opacity: 0.75;
+  font-family: Helvetica;
+}
+
+.upvoted .glyphicon-chevron-up{
+  color: #8724C9;
+}
+
+.upvoted .score.upvote {
+  color: #8724C9;
+}
+
+.upvoted .glyphicon-arrow-up {
+  color: #8724C9;
+}
+
+.downvoted .glyphicon-chevron-down{
+  color: #2E5BE2;
+}
+
+.downvoted .glyphicon-arrow-down{
+  color: #2E5BE2;
+}
+
+.downvoted .score.downvote {
+  color: #2E5BE2;
+  opacity: 0.5;
+}
 
 
 /* Navbar Menu

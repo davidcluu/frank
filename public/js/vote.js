@@ -2,9 +2,6 @@
 $(function(){
   $(".caption-box .arrow.up").click( doUpvote );
   $(".caption-box .arrow.down").click( doDownvote );
-
-  $(".commentbox .arrow.up").click( doUpvote );
-  $(".commentbox .arrow.down").click( doDownvote );
 });
 
 
