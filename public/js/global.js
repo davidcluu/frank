@@ -4,7 +4,17 @@ $(function(){
   $("#search-nav-toggle").click( doExpandSearchContainer );
   $("#search-button").click( doSearch );
   $("#search-button-b").click( doSearchB );
+  colorNavigation();
 });
+
+function colorNavigation() {
+  var url = window.location.href;
+  if (url.indexOf('bdesign') > -1) {
+      $('.glyphicon-search').css('color', 'red');
+      console.log('on the search page');
+  }
+}
+
 
 
 // Expand Category container
