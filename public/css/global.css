@@ -83,13 +83,7 @@ padding-right: 2.4%;
   cursor: hand;
 }
 
-.upvoted .glyphicon-arrow-up, .upvoted .score.upvote {
-  color: #f00;
-}
 
-.downvoted .glyphicon-arrow-down, .downvoted .score.downvote {
-  color: #00f;
-}
 
 /* Navbar Menu
  */
