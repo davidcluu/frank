@@ -142,6 +142,11 @@ a {
 .anon-login:hover,
 .anon-login:active {
   color: #dabfe3;
+  text-align: right;
   text-decoration: underline;
-  text-align: center;
+  text-transform: uppercase;
+}
+
+.anon-login div {
+  margin-top: 20px;
 }
