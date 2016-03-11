@@ -23,11 +23,12 @@ function initialize() {
   // Boolean Flags
   var user1Saved = false;
   var user2Saved = false;
+  var userJohnSaved = false;
   var categoriesSaved = false;
   var postsSaved = false;
 
   function canClose() {
-    return (user1Saved && user2Saved && categoriesSaved && postsSaved);
+    return (user1Saved && user2Saved && userJohnSaved && categoriesSaved && postsSaved);
   }
 
 
@@ -94,6 +95,19 @@ function initialize() {
 
       console.log('Saved User ' + user.username);
       user2Saved = true;
+
+      if (canClose()) {
+        mongoose.connection.close();
+      }
+    });
+
+    var jsonJohn = require('./userJohn.json');
+    var userJohn = new models.User(jsonJohn);
+    userJohn.save(function(err, user) {
+      if(err) console.log(err);
+
+      console.log('Saved User ' + user.username);
+      userJohnSaved = true;
 
       if (canClose()) {
         mongoose.connection.close();
