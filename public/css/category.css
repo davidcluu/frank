@@ -1,5 +1,5 @@
 .module {
-  padding: 0 10%;
+  padding: 0 5%;
 }
 
 .page-title h5 {
@@ -75,8 +75,33 @@
   padding-top: 20px;
 }
 
+.score.upvote, .score.downvote{
+  font-size: 14px;
+  opacity: 0.75;
+  font-family: Helvetica;
+}
+
+.upvoted .glyphicon-chevron-up{
+  color: #8724C9;
+}
+
+.upvoted .score.upvote {
+  color: #8724C9;
+  
+}
+
+.downvoted .glyphicon-chevron-down{
+  color: #2E5BE2;
+}
+
+.downvoted .score.downvote {
+  color: #2E5BE2;
+  opacity: 0.5;
+}
+
 .caption {
   padding-top: 0px;
+  padding-right: 6px;
   font-size: 12px;
 }
 
