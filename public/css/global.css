@@ -45,6 +45,10 @@ padding-right: 2.4%;
   border-radius: 0px;
 }
 
+.input-group-btn {
+  background-color: black;
+}
+
 /*
 .btn a:active, a:focus, a:hover {
   background-color: pink;
