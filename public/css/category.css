@@ -2,13 +2,6 @@
   padding: 0 5%;
 }
 
-.page-title h5 {
-  padding-top: 5px;
-  padding-bottom: 20px;
-  text-transform: uppercase;
-  color: #bfbfbf;
-}
-
 .row {
   margin: 0;
 }
@@ -76,7 +69,7 @@
 }
 
 .score.upvote, .score.downvote{
-  font-size: 14px;
+  font-size: 12px;
   opacity: 0.75;
   font-family: Helvetica;
 }
@@ -124,13 +117,14 @@
 }
 
 .category {
-  padding: 3px;
+  padding: 5px;
+  padding-bottom: 10px;
 
   border-top: 1px solid #ffffff;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 
-  background-color: #ffffff;
+  background-color: #fff;
 
   font-style: italic;
   color: #8cb3d9;
