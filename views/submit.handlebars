@@ -34,28 +34,33 @@
 
     <div class="preview">
         <div class="previewObj" id="previewPlaceholder">
-            <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+            <img src="images/file.png" class="preview-image"/>
+            <p>click to browse files</p>
         </div>
         <div class="previewObj" id="previewImageHolder" style="display: none;">
             <img id="previewImage" src="#" alt="your image" />
         </div>
-    </div>
+    </div> 
 
     <form id="addFriendForm" role="form" method="post" action="/submit-post" enctype="multipart/form-data">
         <fieldset class="form-group">
             <label for="imageInput">Choose photo</label>
-            <input type="file" class="form-control-file" id="imageInput" name="image">
+            <span class="btn-file">
+                <input type="file" class="form-control-file" id="imageInput" name="image">
+            </span>
         </fieldset>
         <fieldset class="form-group">
-            <label for="commentInput">Comment:</label>
+            <label for="commentInput">Description</label>
             <textarea class="form-control" id="commentInput" rows="3" name="comment"></textarea>
         </fieldset>
         <fieldset class="form-group">
-            <label for="categorySelect">Choose Category:</label>
+            <label for="categorySelect">Category</label>
             <select class="form-control" id="categorySelect" name="category">
                 {{#each categories}}
-                    {{category}}
-                    <option>{{category}}</option>
+                    Category
+                    <option>{{category}}
+                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                    </option>
                 {{/each}}
             </select>
         </fieldset>
