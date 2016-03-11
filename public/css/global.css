@@ -45,25 +45,32 @@ padding-right: 2.4%;
   border-radius: 0px;
 }
 
+/*
 .btn a:active, a:focus, a:hover {
-  background-color: black;
+  background-color: pink;
   box-shadow: none;
 }
+*/
 
 .btn:hover, .btn:focus, .btn:active {
   box-shadow: none;
-  background-color: black;
+  background-color: white !important;
 }
-
+/*
 .btn-group:hover, .btn-group:focus, .btn-group:active {
   box-shadow: none;
-  background-color:black;
+  background-color: pink;
 }
+*/
 
 .glyphicon {
   color: #B3B3B3;
 }
 
+.btn:active {
+  background-color: purple;
+
+}
 /* Upvote/Downvote interaction
  */
 

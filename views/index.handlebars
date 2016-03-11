@@ -44,14 +44,14 @@
             {{#each posts}}
                 <div class="col-xs-12 col-min-padding">
                     <div class="post-box">
-                        <a href="/pages/{{category/short}}/{{_id}}/{{truncateURL title 20}}">
+                        <a href="/post/{{category/short}}/{{_id}}/{{truncateURL title 20}}">
                             <img src="{{img_src}}" class="post-picture" alt="{{title}}">
                         </a>
                         <div class="post-text">
                             <div class="title-description">
                                 <div class="caption-box">
                                     <div class="right">
-                                        <div class="score upvoted align-right">
+                                        <div class="score unvoted align-right">
                                             <p><span class="arrow up"><i class="glyphicon glyphicon-arrow-up"></i></span>
                                             <span class="score upvote">{{upvotes}}</span></p>
                                             <p><span class="arrow down"><i class="glyphicon glyphicon-arrow-down"></i></span>
@@ -66,11 +66,11 @@
                             </div>
 
                             <div class="show-comments">
-                                <a href="/pages/{{category/short}}/{{_id}}/{{truncateURL title 20}}">view comments</a>
+                                <a href="/post/{{category/short}}/{{_id}}/{{truncateURL title 20}}">view comments</a>
                             </div>
 
                             <div class="category">
-                                <a href="/pages/{{category/short}}">#{{category/short}}</a>
+                                <a href="/post/{{category/short}}">#{{category/short}}</a>
                             </div>
                         </div>
                     </div>
