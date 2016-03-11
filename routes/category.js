@@ -24,6 +24,7 @@ function renderPage(req, res, pageToRender) {
     .populate('category')
     .find({'category': categoryToID(categoryName)})
     .populate('user')
+    .sort('-upvotes')
     .exec(function(err, post) {
       models.Category
         .find()
