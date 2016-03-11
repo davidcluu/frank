@@ -30,7 +30,7 @@
 
 <body>
 
-    {{> navbdesign}}
+    {{> nav}}
 
 
     <div class="module">
@@ -91,7 +91,7 @@
                 <button class="btn btn-default">Add</button>
             </div>
 
-            <input type="hidden" name="base" value="pagesb" />
+            <input type="hidden" name="base" value="pages" />
             <input type="hidden" name="category" value="{{post/category/short}}" />
             <input type="hidden" name="id" value="{{post/_id}}" />
             <input type="hidden" name="title" value="{{truncateURL post/title 20}}" />

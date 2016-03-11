@@ -18,7 +18,6 @@ var submit = require('./routes/submit');
 var category = require('./routes/category');
 var post = require('./routes/post');
 var login = require('./routes/login');
-var bdesign = require('./routes/bdesign');
 var profile = require('./routes/profile');
 
 /**
@@ -96,21 +95,6 @@ app.get('/pages/:category/:id/:title_cut', post.view);
 app.get('/login', login.view);
 app.get('/profile', profile.view);
 
-/**
- * B-Design Route handlers
- */
- var isB = false;
-app.get('/b', function(req, res) {
-  isB = true;
-  index.viewb(req, res);
-});
-app.get('/bdesign', bdesign.view);
-app.get('/submitb', submit.viewb);
-app.get('/pagesb/:category', category.viewb);
-app.get('/pagesb/:category/:id/:title_cut', post.viewb);
-app.get('/loginb', login.viewb);
-app.get('/profileb', profile.viewb);
-
 
 /**
  * Other Route handlers
@@ -145,8 +129,6 @@ app.post('/submit-post', multer().any(), function(req, res) { 
       console.log('Body error: ' + body);
     }
     else {
-      console.log("upload success");
-
       var models = require('./models.js');
 
       models.User
@@ -171,14 +153,8 @@ app.post('/submit-post', multer().any(), function(req, res) { 
 
               newPost.save(function (err) {
                 if(err) console.log(err);
-                else console.log("Saved");
 
-                if (isB) {
-                  res.redirect('/b');
-                }
-                else {
-                  res.redirect('/');
-                }
+                res.redirect('/');
               })
             });
           });

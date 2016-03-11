@@ -18,9 +18,7 @@ function renderPage(req, res, pageToRender) {
   var title_cut = req.params.title_cut;
 
   models.Post
-    .find({
-      '_id': id
-    })
+    .find({'_id' : id})
     .populate('user')
     .populate('category')
     .populate('comments')
@@ -42,9 +40,6 @@ function renderPage(req, res, pageToRender) {
       }
     });
 }
-
-
-var data = require("./placeholders/post1.json");
 
 exports.post = function(req, res) { 
   var comment = req.body.comment;
