@@ -114,6 +114,13 @@ input::-webkit-input-placeholder {
  box-shadow: inline 2px 3px 3px rgba(0, 0, 1, 0.20);
 }
 
+.btn:hover
+{
+ background-color: #F2F2F2 !important;
+ opacity: 0.75;
+ box-shadow: inline 2px 3px 3px rgba(0, 0, 1, 0.20);
+}
+
 .button-txt {
   color: #8A2BE2;
   font-size: 16px;
