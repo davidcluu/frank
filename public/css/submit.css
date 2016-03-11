@@ -11,10 +11,6 @@ label {
   letter-spacing: 1px;
 }
 
-.upload {
-  text-align: center;
-}
-
 .previewObj {
   width: 90%;
   margin: auto;
@@ -27,8 +23,28 @@ label {
   border: 3px dashed #ECE0F8;
 }
 
+#previewPlaceholder:active, #previewPlaceholder:hover {
+  display:table;
+  background-color: #F9F3FA;
+  border: 3px dashed #D5C1E9;
+}
 
-#previewPlaceholder p {
+.previewUpdate {
+  width: 90%;
+  margin: auto;
+}
+
+
+.previewUpdate p {
+  text-align: right;
+  font-family: Helvetica;
+  font-weight: 300;
+  font-size: 12px;
+  color: #D6194B;
+
+}
+
+.preview-txt {
   font-family: Trebuchet MS;
   font-weight: bold;
   color: #8B69A1;
@@ -58,13 +74,38 @@ label {
   border: 1px solid #E6E6E6;
 }
 
+.btn-file {
+  display:none;
+}
+
 #submit-form {
   margin-top: 20px;
 }
 
-.btn-file {
-  display: none;
+#addFriendForm input.invalid
+{
+  animation:invalid .5s;
+  -webkit-animation:invalid .5s;
+  box-shadow:0 0 5px 1px #f43841;
 }
+
+  @keyframes invalid
+  {
+  0%   {left:8px;}
+  10%  {left:-8px;}
+  30%  {left:8px;}
+  60%  {left:-8px;}
+  100% {left:0px;}
+  }
+
+  @-webkit-keyframes invalid /* Safari and Chrome */
+  {
+  0%   {left:8px;}
+  10%  {left:-8px;}
+  30%  {left:8px;}
+  60%  {left:-8px;}
+  100% {left:0px;}
+  }
 
 .form-group {
   width: 90%;
@@ -97,13 +138,22 @@ label {
   border-color: purple;
 }
 
-.submit-btn {
+.submit-btn, .submit-btn:active {
   width: 90%;
   background-color: #731D9A;
   margin-top: 15px;
   padding: 10px 0;
-  box-shadow: 2px 3px 3px rgba(0, 0, 1, 0.20);
-  
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.20);
+  border-outline: none;
+}
+
+ .submit-btn:hover, .submit-btn:focus {
+  width: 90%;
+  background-color: #4B1564 !important;
+  margin-top: 15px;
+  padding: 10px 0;
+  box-shadow: 2px 3px 3px rgba(230, 230, 230, 0.20);
+
 }
 
 .submit-txt {

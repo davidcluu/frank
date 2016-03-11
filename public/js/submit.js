@@ -33,4 +33,24 @@ function updatePreviewImage(input) {
   }
 }
 
-$()
+$(function(){
+
+  var $photo = $("#imageInput");
+  var $button = $("#submit-post");
+
+  $button.click(function(){
+    var p = $photo.val();
+    if (p) // we're only ensuring that something has been entered
+    {
+      console.log("yo")
+      $(".submit-txt").text("SUBMITTING...");
+
+      
+    }
+    else
+    {
+      $(".previewUpdate").append("<p>Please upload a photo!</p>");
+    }
+  });
+  
+});

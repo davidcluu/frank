@@ -19,7 +19,7 @@
 
     <!-- Global CSS -->
     <link href="/css/global.css" rel="stylesheet">
-    <!-- Page Specific CSS -->
+    <!-- Specific CSS -->
     <link href="/css/submit.css" rel="stylesheet">
 
     <!-- Global JS -->
@@ -34,17 +34,18 @@
     <div class="preview">
         <div class="previewObj" id="previewPlaceholder">
             <img src="images/file.png" class="preview-image"/>
-            <p>click to browse files</p>
+            <div class="preview-txt">click to browse files</div>
         </div>
         <div class="previewObj" id="previewImageHolder" style="display: none;">
             <img id="previewImage" src="#" alt="your image" />
         </div>
+        <div class="previewUpdate"></div>
     </div> 
 
     <form id="addFriendForm" role="form" method="post" action="/submit-post" enctype="multipart/form-data">
         <fieldset class="form-group">
             <span class="btn-file">
-                <input type="file" class="form-control-file" id="imageInput" name="image">
+                <input type="file" type="hidden" class="form-control-file" id="imageInput" name="image" required>
             </span>
         </fieldset>
         <fieldset class="form-group">
